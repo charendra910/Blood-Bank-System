@@ -18,7 +18,7 @@ The **Blood Bank Management System** is a web application developed using **ASP.
 ## Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/blood-bank-management.git
+    git clone https://github.com/charendra910/Blood-Bank-System.git
 2. Open the solution in **Visual Studio**.
 3. Update the database connection string in `appsettings.json`.
 4. Build and run the project.
