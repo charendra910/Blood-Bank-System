@@ -1,0 +1,414 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head content here -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Blood_Bank_System</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Blood_Bank_System.styles.css" asp-append-version="true" />
+
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/font-size/font-size.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/padding/padding.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .footer-section {
+            background: #151414;
+            position: relative;
+        }
+
+        .footer-cta {
+            border-bottom: 1px solid #373636;
+        }
+
+        .single-cta i {
+            color: #ff5e14;
+            font-size: 30px;
+            float: left;
+            margin-top: 8px;
+        }
+
+        .cta-text {
+            padding-left: 15px;
+            display: inline-block;
+        }
+
+            .cta-text h4 {
+                color: #fff;
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 2px;
+            }
+
+            .cta-text span {
+                color: #757575;
+                font-size: 15px;
+            }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-pattern img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 330px;
+            background-size: cover;
+            background-position: 100% 100%;
+        }
+
+        .footer-logo {
+            margin-bottom: 30px;
+        }
+
+            .footer-logo img {
+                max-width: 200px;
+            }
+
+        .footer-text p {
+            margin-bottom: 14px;
+            font-size: 14px;
+            color: #7e7e7e;
+            line-height: 28px;
+        }
+
+        .footer-social-icon span {
+            color: #fff;
+            display: block;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .footer-social-icon a {
+            color: #fff;
+            font-size: 16px;
+            margin-right: 15px;
+        }
+
+        .footer-social-icon i {
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            line-height: 38px;
+            border-radius: 50%;
+        }
+
+        .fa-brands {
+            background: #3B5998;
+        }
+
+        .twitter-bg {
+            background: #55ACEE;
+        }
+
+        .google-bg {
+            background: #DD4B39;
+        }
+
+        .footer-widget-heading h3 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+            .footer-widget-heading h3::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -15px;
+                height: 2px;
+                width: 50px;
+                background: #ff5e14;
+            }
+
+
+
+        .footer-widget ul {
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+            list-style-type: none; /* Remove bullet points */
+        }
+
+            .footer-widget ul li {
+                margin-bottom: 12px; /* Space between items */
+            }
+
+                /* Ensure links are styled properly */
+                .footer-widget ul li a {
+                    color: #878787;
+                    text-transform: capitalize;
+                    display: block; /* Make links block elements to fill the entire list item */
+                }
+
+                    .footer-widget ul li a:hover {
+                        color: #ff5e14; /* Change color on hover */
+                    }
+
+
+        .subscribe-form {
+            position: relative;
+            overflow: hidden;
+        }
+
+            .subscribe-form input {
+                width: 100%;
+                padding: 14px 28px;
+                background: #2E2E2E;
+                border: 1px solid #2E2E2E;
+                color: #fff;
+            }
+
+            .subscribe-form button {
+                position: absolute;
+                right: 0;
+                background: #ff5e14;
+                padding: 13px 20px;
+                border: 1px solid #ff5e14;
+                top: 0;
+            }
+
+                .subscribe-form button i {
+                    color: #fff;
+                    font-size: 22px;
+                    transform: rotate(-6deg);
+                }
+
+        .copyright-area {
+            background: #202020;
+            padding: 25px 0;
+        }
+
+        .copyright-text p {
+            margin: 0;
+            font-size: 14px;
+            color: #878787;
+        }
+
+            .copyright-text p a {
+                color: #ff5e14;
+            }
+
+        .footer-menu li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+            .footer-menu li:hover a {
+                color: #ff5e14;
+            }
+
+            .footer-menu li a {
+                font-size: 14px;
+                color: #878787;
+            }
+
+        .nav-item {
+            padding-right: 20px;
+        }
+
+        .bd1{
+            padding:0px;
+
+        }
+    </style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top" style="height: 80px; font-size:20px;">
+        <!-- Navbar code here -->
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top" style="height: 80px; font-size:20px;">
+                <div class="container-fluid">
+                    <!-- Navbar brand with padding-left and icon -->
+                    <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index" style="padding-left: 50px; font-weight:bold; font-size:19px;">
+                        <img src="~/images/favicon.png" alt="Icon" style="width: 30px; height: 30px; "> <!-- Replace with your image path -->
+                        <span class="ms-2">BLOOD BANK MANAGEMENT</span>
+                    </a>
+
+                    <!-- Toggler for smaller screens -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Centered navbar items -->
+                    <div class="navbar-collapse collapse justify-content-center">
+                        <ul class="navbar-nav" style="margin-left:80px; font-size:17px; font-weight:bold;">
+                            <li class="nav-item" >
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="Home" asp-action="About">ABOUT US</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="Account" asp-action="TransferAmount">BLOG</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Contact">CONTACT</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+    </nav>
+
+    <div class="bd1">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div class="bd1">
+        <!-- Footer code here -->
+        <footer class="footer-section" style="padding:30px;">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span>RK University, Rajkot, Gujarat</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                <span>+91 9956303809</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="far fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>
+                                    <a href="mailto:harendratharu0@gmail.com"
+                                       style="color: inherit; text-decoration: none;"
+                                       onmouseover="this.style.color='red';"
+                                       onmouseout="this.style.color='inherit';">
+                                        harendratharu0@gmail.com
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-logo" style="display: flex; align-items: center;">
+                                <a href="#"><img src="~/images/icon4.png" class="img-fluid" alt="logo" width="80px"></a>
+                                <p style="color: white; font-size:20px; font-weight:bold; margin-left: 10px;">Help lives!</p>
+                            </div>
+                            <div class="footer-text">
+                                <p>
+                                    We invite you to join our mission of saving lives. Whether <br /> you are a potential donor, a healthcare professional,
+                                    or a community member, your support is vital. Help us grow our lifesaving network by following us on social media.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Links Or Information</h3>
+                            </div>
+                            <ul>
+                                <li><a asp-controller="Home" asp-action="Index" asp-area="">Home</a></li>
+                                <li><a asp-controller="Home" asp-action="Privacy" asp-area="">About Us</a></li>
+                                <li><a asp-controller="Campaign" asp-action="Index" asp-area="">Campaign</a></li>
+                                <li><a asp-controller="Blog" asp-action="Index" asp-area="">Blog</a></li>
+                                <li><a asp-controller="Contact" asp-action="Index" asp-area="">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Follow Us</h3>
+                            </div>
+                            <div class="footer-text mb-25">
+                                <p>
+                                    Follow us to stay informed about blood drives, urgent needs, and help save lives!
+                                </p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Follow us</span>
+                                <a href="www.linkedin.com/in/harendra-chaudhary-54446324b"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="https://www.facebook.com/tharuwa.harendra.9/"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="www.google.com"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <marquee direction="right">
+                <img src="~/images/c1.gif" style="height: 100px;" />
+            </marquee>
+
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                            <div class="copyright-text">
+                                <p class="text-center text-gray-600">
+                                    Copyright &copy; 2018, <strong>Designed by</strong> <cite>Harendra & Pradip Tharu</cite>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Compaign</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts here -->
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
