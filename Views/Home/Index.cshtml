@@ -2,15 +2,52 @@
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
+
 <style>
     .container-fluid{
        
         text-align:center;
     }
+    .s1{
+        padding:100px 0 100px 0;
+       
+    }
+
+    .sec-bg1 {
+        background-color:white;
+        margin-top: 50px;
+        padding-bottom: 200px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow for lifted effect */
+        position: relative;
+        margin-left:20px;
+        left:60px;
+        z-index: 2;
+        border-radius: 20px;
+        width:600px;
+       /* Overlap by 30px */
+    }
+
+    .sec-bg2 {
+
+        margin-bottom: 50px;
+        position: relative;
+        
+        border-radius:20px;
+        box-shadow: 0 4px 20px 10px rgba(0, 0, 0, 0.3); /* Shadow for lifted effect */
+        z-index: 1; /* Behind .sec-bg1 */
+    }
+    .sec-intro{
+        position:relative;
+        left:40px;
+        top:40px;
+    }
+
 </style>
 
 <div class="container-fluid p-0">
-    <div id="carouselExampleCaptions" class="carousel slide">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -18,24 +55,24 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="~/images/nv1.jpg" class="d-block w-100" alt="...">
+                <img src="~/images/nv1.jpg" class="d-block w-100" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
+                    <h5>Efficient Blood Donation Management</h5>
+                    <p>Streamline the process of registering donors and managing blood availability in real-time.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="~/images/nv2.jpg" class="d-block w-100" alt="...">
+                <img src="~/images/nv2.jpg" class="d-block w-100" alt="Second slide">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
+                    <h5>Find Donors Instantly</h5>
+                    <p>Search for donors by blood group and location, ensuring timely blood supply for those in need.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="~/images/photo3.jpg" class="d-block w-100" alt="...">
+                <img src="~/images/photo3.jpg" class="d-block w-100" alt="Third slide">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
+                    <h5>Secure and Reliable System</h5>
+                    <p>Ensure safe and secure record-keeping of blood donations with advanced data protection.</p>
                 </div>
             </div>
         </div>
@@ -49,6 +86,46 @@
         </button>
     </div>
 </div>
+
+
+<section class="s1">
+    <div class="container">
+        <div class="row">
+
+            <div class="sec-bg1 col-xl-5">
+                <div class="sec-intro">
+                    <h1>
+                        <strong style="font-weight:600;">Who We Are ?</strong>
+                    </h1>
+                    <p>sdkjfgsdhjs saf safa wfeaiutgrf weuitry ewt rewiqutrg wqrwo rwqiury qewr</p>
+                    <ul style="position:relative;left:20px;top:30px; right:20px;">
+                       
+                        <li>Simplifying blood donations for everyone.</li>
+                        <li>Managing donor data efficiently and securely.</li>
+                        <li>Connecting donors with those in need.</li>
+                        <li>Ensuring reliable access to life-saving blood.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sec-bg2 col-xl-5" style="position: relative; display: inline-block;">
+                <!-- Background Image -->
+                <a href="https://youtu.be/Yxql1GVPJVk?si=2xICkeF2bFRFfPlE" target="_blank">
+                    <img src="https://thepatriot.in/wp-content/uploads/2024/06/Blood-Donation-In-India.jpg" style="height: 430px; width: 633px; object-fit: cover;border-radius:20px;" />
+                    <!-- Play Button Icon Overlay -->
+                    <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/play-button-circled.png" />
+                    </div>
+                </a>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</section>
+
 
 <p class="container-fluid">
     Essay on Education
