@@ -26,8 +26,11 @@
         z-index: 2;
         border-radius: 10px;
         width:538px;
-
-       /* Overlap by 30px */
+        transition: transform 0.3s ease-in-out;
+        /* Overlap by 30px */
+    }
+    .sec-bg1:hover{
+            transform: scale(1.05); /* Zoom in on hover */
     }
 
     .sec-bg2 {
@@ -38,7 +41,12 @@
         border-radius:10px;
         box-shadow:15px 10px 10px rgba(0, 0, 0, 0.2); /* Shadow for lifted effect */
         z-index: 1; /* Behind .sec-bg1 */
+        transition: transform 0.3s ease-in-out;
     }
+    .sec-bg2:hover{
+            transform: scale(1.05); /* Zoom in on hover */
+    }
+
     .sec-intro{
         position:relative;
         left:40px;
