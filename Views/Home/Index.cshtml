@@ -67,14 +67,13 @@
 
     .s2 {
         background-image:url('https://www.lanermc.org/hubfs/organ%20donor.jpeg');
-        
+       
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top center;
         background-attachment: inherit;
-        width:100%;
-        max-height:400px;
-        height:auto;
+     /*    width:100%;
+        max-height:800px; */
         overflow: hidden;
         padding-top: 60%; /* 16:9 Aspect Ratio */
         position: relative;
@@ -92,20 +91,27 @@
         background-color:antiquewhite;
         height:200px;
     } */
-    .rw1{
-        background-color:navajowhite;
-        background-size:cover;
-        background-repeat:no-repeat;
-        position:relative;
+    .rw1 {
        
-    }
-    .rw2{
-        background-color:lightgreen;
         background-size: cover;
         background-repeat: no-repeat;
-        position:relative;
+        position: relative;
+       
     }
 
+    .rw2 {
+       
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+
+    }
+
+    .rw1 img, .rw2 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 </style>
 
 <div class="container-fluid p-0">
@@ -148,7 +154,6 @@
         </button>
     </div>
 </div>
-
 
 
 <!--first section start-->
@@ -198,9 +203,8 @@
 </section>
 <!--first section end-->
 
-
 <!--second section start-->
-<section class="s2" >
+<section class="s2">
     <div class="container txt-bg col-md-12 col-sm-12 col-xs-12 text-center no-img-separator">
         <h4 style="color:white;">Awesome Words from our members</h4>
         <span class="span1"></span>
