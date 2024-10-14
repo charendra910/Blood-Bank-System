@@ -27,7 +27,7 @@ namespace Blood_Bank_System.Controllers
         {
             return View();
         }
-        public IActionResult Privacy()
+        public IActionResult Blog()
         {
             return View();
         }
