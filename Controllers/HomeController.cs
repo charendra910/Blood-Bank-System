@@ -22,8 +22,7 @@ namespace Blood_Bank_System.Controllers
         {
             return View();
         }
-
-        public IActionResult Contact()
+        public IActionResult Campaign()
         {
             return View();
         }
@@ -31,7 +30,10 @@ namespace Blood_Bank_System.Controllers
         {
             return View();
         }
-
+        public IActionResult Contact()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
