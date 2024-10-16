@@ -6,6 +6,12 @@
 
 <br />
 
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
 <style>
     .div1 {
         background-image: url('https://templates.bwlthemes.com/blood_donation/v_2/images/header-bg.jpg');
@@ -58,7 +64,7 @@
         /* Overlap by 30px */
     }
 
-    sec-bg1:hover {
+    .sec-bg1:hover {
         transform: scale(1.05); /* Zoom in on hover */
     }
 
@@ -104,9 +110,12 @@
         margin: 20px 0;
         top: 0px;
         position: relative;
-        transition: all 0.5s ease-out;
+        transition:color 0.3s ease;
     }
-
+    .icon-1:hover{
+        color:red;
+    }
+    
     .fa {
         display: inline-block;
         font: normal normal normal 14px / 1 FontAwesome;
@@ -131,7 +140,20 @@
         font: inherit;
         vertical-align: baseline;
     }
+    .four-row{
+        margin-top:50px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
+    .four-row:hover {
+        transform:scale(1.1);
+    }
+    .txt{
+        line-height:70px;
+        font-weight:500;
+        font-family:sans-serif;
+        letter-spacing:0.04em;
+    }
    
 </style>
 
@@ -190,6 +212,8 @@
     </div>
 </section>
 <!--first section end-->
+
+
 <!--2nd section start-->
 <section class="s2-about">
     <div class="container" style="background-color:none;visibility: visible;animation-name: fadeInUp;">
@@ -204,38 +228,38 @@
         </div>
 
 
-        <div class="row" style="margin-top:50px;">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 four-row">
                 <div class="f1-txt" style="text-align:center;padding:24px 24px;margin:32px 0;background-color:whitesmoke;">
                     <i class="fa-solid fa-heart-pulse icon-1"></i>
-                    <span class="counter">45789</span>
+                    <span class="counter">8789</span>
                     <h4 class="txt">Success Smile</h4>
                 </div>
             </div>
 
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 four-row">
                 <div class="f1-txt" style="text-align:center;padding:24px 24px;margin:32px 0;background-color:ghostwhite;">
                     <i class="fa-solid fa-stethoscope icon-1"></i>
-                    <span class="counter">56789</span>
-                    <h4>Happy Donors</h4>
+                    <span class="counter">6789</span>
+                    <h4 class="txt">Happy Donors</h4>
                 </div>
             </div>
 
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 four-row">
                 <div class="f1-txt" style="text-align:center;padding:24px 24px;margin:32px 0;background-color:lightyellow;">
                     <i class="fa-solid fa-users icon-1"></i>
-                    <span class="counter">45789</span>
+                    <span class="counter">4579</span>
                     <h4 class="txt">Happy Recipients</h4>
                 </div>
             </div>
 
 
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                <div class="f1-txt" style="text-align:center;padding:24px 24px;margin:32px 0;background-color:cadetblue;">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 four-row">
+                <div class="f1-txt" style="text-align:center;padding:24px 24px;margin:32px 0;background-color:LightGray;">
                     <i class="fa-solid fa-award icon-1"></i>
-                    <span class="counter">45789</span>
+                    <span class="counter">2789</span>
                     <h4 class="txt">Total Awards</h4>
                 </div>
             </div>
@@ -245,3 +269,19 @@
 
 </section>
 <!--2nd section end-->
+
+<script>
+    $('.counter').each(function () {
+        $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+        }, {
+
+            //chnage count up speed here
+            duration: 3000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
+</script>
