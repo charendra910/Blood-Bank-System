@@ -26,7 +26,11 @@ namespace Blood_Bank_System.Controllers
         {
             return View();
         }
-        public IActionResult Blog()
+        //public IActionResult Blog()
+        //{
+        //    return View();
+        //}
+        public IActionResult Service()
         {
             return View();
         }
