@@ -5,6 +5,7 @@
 }
 
 
+
 <style>
 
     .div1 {
@@ -39,6 +40,39 @@
         background: red;
         vertical-align: baseline;
     }
+    .list-services{
+        font-weight: 400;
+        font-style: normal;
+        font-family: 'Poppins', sans-serif;
+        color: #555555;
+        font-size: 24px;
+        line-height: 1.3;
+        letter-spacing: 0px;
+        padding-left:70px;
+    }
+
+    .service-img{
+        background-image: url('@Url.Content("~/images/ser4.jpg")');
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position:center;
+        position:relative;
+        min-height:400px;
+        z-index:1;
+
+    }
+    .text-img{
+        padding-top:40px;
+        padding-left:60px;
+        font-weight: 500;
+        font-style: normal;
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+        font-size: 40px;
+        line-height: 1.2;
+        letter-spacing: 0px;
+        z-index:2;
+    }
 
 </style>
 
@@ -53,24 +87,28 @@
 
 <br />
 
+<section class="container-fluid pb-5 pt-5">
+    <div class="text-center">
+        <h1 style="font-weight:600;">OUR SERVICES</h1>
+        <span class="span1"></span>
+    </div>
+</section>
+
+
 <section class="container-fluid">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-5 col-sm-12 bg-gradient">
+            <div class="col-lg-5 col-sm-12 bg-gradient " style="padding-left:150px;">
                 <div class="">
                     <h1 class="">
                         Blood Products
                     </h1>
                     <span class="span1"></span>
-
-                    <p class="fs-5 " style="font-family: 'Poppins', sans-serif;">
+                    <p class="fs-5 pt-4" style="font-family: 'Poppins', sans-serif; ">
                         Blood Center is dedicated to providing the highest quality blood products and services. 
-                        Our staff is ready to serve you 24/7. Donec urna metus, mattis eget eros et, iaculis 
-                        vestibulum ante. In tortor nisi, consequat ut mi id, elementum sagittis nisl. Phasellus 
-                        purus ex, dignissim quis vestibulum at, pulvinar vel nisl. Pellentesque ligula lorem, 
-                        hendrerit a aliquet in, ultricies vitae ipsum. Duis turpis augue, pretium sed leo eget, 
-                        pulvinar gravida eros. Ut porttitor laoreet tincidunt. Mauris vitae nisl nec sem volutpat 
-                        aliquet in vitae ipsum.
+                        Our staff is ready to serve you 24/7.Blood products like Red Blood Cells (RBCs), Plasma,
+                        Platelets, and Cryoprecipitate are essential for treating conditions like anemia, trauma,
+                        and clotting disorders. 
                     </p>
                 </div>
             </div>
@@ -84,3 +122,111 @@
     </div>
 </section>
 
+
+<section class="" style="margin-top:100px;">
+    <div class="">
+        <div class="row" style="background-color:whitesmoke;">
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 " style="position: relative;">
+                <a href="https://youtu.be/Yxql1GVPJVk?si=2xICkeF2bFRFfPlE">
+                    <img src="https://template79832.motopreview.com/mt-demo/79800/79832/mt-content/uploads/2019/04/mt-1802-services-img01.jpg" style="width: 100%; height: auto;" />
+                    <!-- Play Button Icon Overlay -->
+                    <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center;">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/play-button-circled.png" style="width: 50px; height: 50px;" />
+                    </div>
+                </a>
+            </div>
+
+
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 pt-5 list-services ">
+                <p>
+                    > Red Blood Cells
+                </p>
+                <p>
+                    > Whole Blood  Cells
+                </p>
+                <p>
+                    > Plasma Products
+                </p>
+                <p>
+                    > Platelet Products
+                </p>
+                <p>
+                    > Blood Products for Research
+                </p>
+               
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="container-fluid" style="margin-top:120px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 col-sm-12 bg-gradient " style="padding-left:150px;">
+                <div class="">
+                    <h1 class="">
+                        Biomedical Services
+                    </h1>
+                    <span class="span1"></span>
+                    <p class="fs-5 pt-2" style="font-family: 'Poppins', sans-serif; ">
+                        We offer a comprehensive menu of services  to support and manage 
+                        the full spectrum of transfusion medicine, regenerative medicine
+                        and cellular-therapy related research projects, from basic science
+                        to full scale clinical trials.
+                    </p>
+
+                    <div class="mt-2" style="padding-left:20px;font-size:18px;">
+                        <p>
+                            > Red Blood Cells
+                        </p>
+                        <p>
+                            > Whole Blood  Cells
+                        </p>
+                        <p>
+                            > Plasma Products
+                        </p>
+                        <p>
+                            > Platelet Products
+                        </p>
+                        <p>
+                            > Blood Products for Research
+                        </p>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-sm-12 bg-light">
+                <div class="">
+                    <img src="~/images/ser3.jpg" style="opacity:0.89;" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="" style="margin-top:80px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="service-img">
+                <div class="text-img">
+                    <p class="">
+                        For more information please <br />
+                        Contact Us</p>
+
+                    <button class="fs-3" style="padding:10px 20px;background-color:red;">
+                        Contact us
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
