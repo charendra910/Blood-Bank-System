@@ -43,3 +43,14 @@ body {
     }
 
 }
+
+@media only screen and (min-width: 200px) and (max-width: 575px) {
+    .s1 .r1 {
+        flex-direction: column; /* Ensure sections stack vertically on mobile */
+    }
+
+    .sec-bg1 {
+        margin-bottom: 50px; /* Adds space between sec-bg1 and sec-bg2 */
+    }
+
+}
