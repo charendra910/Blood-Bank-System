@@ -6,6 +6,9 @@
 
 
 <style>
+     html{
+        scroll-behavior:smooth;
+    }
     .container-fluid {
        
     }
@@ -69,7 +72,7 @@
     }
 
     .s2 {
-        background-image: url('https://templates.bwlthemes.com/blood_donation/v_2/images/testimony_feat_bg.jpg');
+        background-image: url('@Url.Content("~/images/s2-img.webp")');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top center;
@@ -94,7 +97,8 @@
                 } */
 
     .rw1 {
-        top: -100px;
+        margin-top:100px;
+        top: -120px;
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
@@ -102,8 +106,8 @@
         padding-left: 30px;
     }
 
-    .rw2 {
-        top: -100px;
+    .rw2 {margin-top:100px;
+        top: -120px;
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
@@ -282,13 +286,13 @@
     </div>
 
     <div class="container-fluid row" style="margin-top:-300px;">
-        <div class="rw1 col-lg-6 col-md-12 col-sm-12">
-            <img src="https://media.istockphoto.com/id/1335544846/photo/senior-human-hand-holding-red-paper-heart-shape-and-red-blood-drop-symbol-on-bandage-for.jpg?s=612x612&w=0&k=20&c=gVXGcm6WOvo-HNqMFztk6QdaQBUr3vDeU1mOfiDrLuI=" />
+        <div class="rw1 col-lg-6 col-md-12 col-12">
+            <img src="~/images/imgs21.jpg" />
 
         </div>
 
-        <div class="rw2 col-lg-6 col-md-12 col-sm-12">
-            <img src="https://media.istockphoto.com/id/1445531404/photo/world-blood-donation-donor-day-and-save-life.jpg?s=612x612&w=0&k=20&c=BWWNmtNDQgd4kYClYJAEf9sH3W5gxeC46zUz0c9vfpg=" />
+        <div class="rw2 col-lg-6 col-md-12 col-12">
+            <img src="~/images/imgs2.jpg" />
         </div>
 
     </div>
@@ -312,9 +316,8 @@
                                 compaigs including blood donating, Donation camp, blood group check and group formation.
                             </small>
                         </h4>
-                        <a class="btn btn-theme" style="margin-top:32px;" href="#">Load All Campaigns</a>
+                         <a class="btn btn-theme" href="~/Home/Campaign#campaign-section" style="margin-top:32px;">Load All Campaigns</a>
                     </div>
-
                 </div>
             </div>
 
