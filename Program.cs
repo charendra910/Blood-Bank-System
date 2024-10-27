@@ -1,7 +1,18 @@
+using Blood_Bank_System.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
+//registering the connection string
+
+builder.Services.AddDbContext<ContactContext>
+    (s => s.UseSqlServer(builder.Configuration.GetConnectionString("con")));
+
+
 
 var app = builder.Build();
 

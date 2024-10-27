@@ -1,6 +1,7 @@
-﻿
+﻿@model Blood_Bank_System.Models.ContactModel
+
 @{
-    ViewData["Title"] = "Contact";
+    ViewData["Title"] = "AddContactUs";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -53,19 +54,19 @@
        margin-top:10px;
        cursor:pointer;
     }
-   
+
 </style>
 
 
 
-@* <section>
+<section>
     <div class="container-fluid div1">
         <div class="txt-rpl">
             CONTACT US
         </div>
     </div>
 </section>
- *@
+
 
 <section class="container-fluid">
     <div class="container-sm">
@@ -80,12 +81,12 @@
                 <div class="p-4">
                     <h2>
                         Get in Touch
-                    </h2>   
+                    </h2>
                     <span class="span1"></span>
                     <p class="contact-detail mt-3">
-                        We are committed to ensuring the availability of safe and adequate blood supplies. 
+                        We are committed to ensuring the availability of safe and adequate blood supplies.
                         If you have any inquiries about donations, requests, or collaborations, please reach out to us.
-                        Our team is here to help you with any information regarding blood availability, donor registration, 
+                        Our team is here to help you with any information regarding blood availability, donor registration,
                         and blood drive campaigns.Feel free to contact us with any questions or for further assistance.
                     </p>
                 </div>
@@ -107,10 +108,10 @@
         <div class="row contact-detail text-center sec-contact">
 
             <div class="col-lg-4 shadow ms-4">
-                <div class="justify-content-center align-items-center" >
+                <div class="justify-content-center align-items-center">
                     <i class="fa-solid fa-location-crosshairs"></i>
                     <h3>Address</h3>
-                    <p>A108 Adam Street, New York, NY 535022</p>
+                    <p>RK University, Rajkot, Gujarat</p>
                 </div>
             </div><!-- End Info Item -->
 
@@ -118,7 +119,7 @@
                 <div class="justify-content-center align-items-center">
                     <i class="fa-solid fa-phone"></i>
                     <h3>Call Us</h3>
-                    <p>+1 5589 55488 55</p>
+                    <p>+91 9956303809</p>
                 </div>
             </div><!-- End Info Item -->
 
@@ -141,30 +142,35 @@
         <div class="row">
             <div class="col-lg-6 col-12">
                 <div class="">
-                
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.9912315303445!2d70.89784381131392!3d22.24041147964518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959b4a660019ee9%3A0x3d6254f36ed0e794!2sRK%20University%20Main%20Campus!5e0!3m2!1sen!2sin!4v1730020726547!5m2!1sen!2sin" 
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.9912315303445!2d70.89784381131392!3d22.24041147964518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959b4a660019ee9%3A0x3d6254f36ed0e794!2sRK%20University%20Main%20Campus!5e0!3m2!1sen!2sin!4v1730020726547!5m2!1sen!2sin"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
                 </div>
             </div>
+
             <div class="col-lg-6 col-12 bg-lighter">
 
-                <form action="#" class="row g-3 mt-3">
+                <form method="post" class="row g-3 mt-3">
                     <div class="col-md-6">
-                        <label for="inputName" class="form-label">Name</label> 
-                        <input type="text" class="form-control" id="inputName" required>
+                        <label class="form-label" asp-for="Name">Name</label>
+                        <input asp-for="Name" type="text" class="form-control" >
+                        <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
                     <div class="col-md-6">
-                        <label for="inputEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" required>
+                        <label asp-for="Email" class="form-label">Email</label>
+                        <input asp-for="Email" type="email" class="form-control">
+                        <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                     <div class="col-12">
-                        <label for="inputAddress" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Your Address" required>
+                        <label asp-for="Address" class="form-label">Address</label>
+                        <input asp-for="Address" type="text" class="form-control" placeholder="Your Address" >
+                        <span asp-validation-for="Address" class="text-danger"></span>
                     </div>
                     <div class="col-12">
-                        <label for="inputMessages" class="form-label">Message</label>                     
-                        <textarea type="text" id="inputMessages" rows="5" class="form-control" placeholder="Leave messages here" id="floatingTextarea" required></textarea>
+                        <label asp-for="Message" class="form-label">Message</label>
+                        <textarea asp-for="Message" type="text" rows="5" class="form-control" placeholder="Leave messages here" id="floatingTextarea"></textarea>
+                        <span asp-validation-for="Message" class="text-danger"></span>
                     </div>
 
                     <div class="col-12 text-center">
@@ -176,3 +182,5 @@
         </div>
     </div>
 </section>
+
+
