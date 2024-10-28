@@ -38,6 +38,19 @@
     .fs{
         font-size:46px;
     }
+    .mar{
+        padding-top:13px;
+    }
+
+    .error-message {
+        position: absolute;
+        right: 10px; /* Adjust this value as needed for spacing */
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%); /* Center the error message */
+        font-size: 12px; /* Small font size */
+        color: #dc3545; /* Red color for errors */
+        pointer-events: none; /* Make sure the error message does not interfere with input */
+    }
  
 </style>
 <br />
@@ -79,7 +92,7 @@
                             </p>
                         </div>
                         
-                        <div class="mt-4">
+                        <div class="mar">
                             <p style="font-size:16px;margin-bottom:8px;"><i class="fa-solid fa-calendar-days" style="font-size:20px;padding-right:5px;color: #196cb3;"></i>Date:</p>
                         </div>
                         <div class="p-0">
@@ -88,7 +101,7 @@
                             </p>
                         </div>
                        
-                        <div class="mt-4">
+                        <div class="mar">
                             <p style="font-size:16px;margin-bottom:8px;"><i class="fa-regular fa-clock" style="font-size:20px;padding-right:5px;color: #196cb3;"></i>Time:</p>
                         </div>
                         <div class="p-0">
@@ -101,28 +114,29 @@
 
                     <div class="col-lg-8">
                         <div class="col-lg-12 col-12">
-                            <h4 class="text-center">Register today</h4>
+                            <h4 class="text-center pb-2" >Register today</h4>
                             
                             <form method="post">
-                                <div class="mb-2">
+                                <div class="mb-2 position-relative">
                                     <input type="text" class="form-control form-control-lg" asp-for="Name" placeholder="Your Name" />
-                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                    <span asp-validation-for="Name" class="text-danger error-message"></span>
                                 </div>
 
-                                <div class="mb-2">
+                                <div class="mb-2 position-relative">
                                     <input type="text" class="form-control form-control-lg" asp-for="Email" placeholder="Email" />
-                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                    <span asp-validation-for="Email" class="text-danger error-message"></span>
                                 </div>
 
-                                <div class="mb-2">
+                                <div class="mb-2 position-relative">
                                     <input type="text" class="form-control form-control-lg" asp-for="PhoneNumber" placeholder="PhoneNumber" />
-                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                    <span asp-validation-for="PhoneNumber" class="text-danger error-message"></span>
                                 </div>
 
-                                <div class="text-center pt-3">
+                                <div class="text-center pt-2">
                                     <button type="submit" class="fs-5 p-3 rounded-3 bg-danger text-white">Make an Appointment</button>
                                 </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
