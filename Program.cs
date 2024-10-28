@@ -12,7 +12,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ContactContext>
     (s => s.UseSqlServer(builder.Configuration.GetConnectionString("con")));
 
-
+//register for the appointment connection string
+builder.Services.AddDbContext<IndexContext>
+    (appoint => appoint.UseSqlServer(builder.Configuration.GetConnectionString("con")));
 
 var app = builder.Build();
 
