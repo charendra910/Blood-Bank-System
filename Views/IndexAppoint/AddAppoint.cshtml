@@ -1,4 +1,5 @@
-﻿
+﻿@model Blood_Bank_System.Models.IndexModel;
+
 @{
     ViewData["Title"] = "AddAppoint";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,6 +12,10 @@
         font-family: 'Poppins', sans-serif;
         color: #434f53;
     }
+
+    .img-app{
+        min-height:500px;
+    }
     .app-txt{
         padding-left:35px;
         font-weight: 400;
@@ -18,12 +23,20 @@
         font-family: 'Poppins', sans-serif;
         color: #555555;
         font-size: 16px;
-        line-height: 1.5;
+        line-height: 1.6;
         letter-spacing: 0px;
     }
     .txt-app{
         padding-left:50px;
         
+    }
+
+    .form-control::placeholder {
+        font-size: 15px; /* Adjust to make the placeholder text smaller */
+        color: #6c757d; /* Optional: change color if needed */
+    }
+    .fs{
+        font-size:46px;
     }
  
 </style>
@@ -34,16 +47,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-12">
-                <div class="img-app">
-                    <img src="~/images/app1.jpg" class="img-fluid" />
+                <div class="">
+                    <img src="~/images/app1.jpg" class="img-fluid img-app" style="width:100%;object-fit:cover;" />
                 </div>
             </div>
 
 
-            <div class="col-lg-6 col-12">
+            <div class="col-lg-6 col-12 img-app" style="">
                 <div class="img2-app">
                     <div class="">
-                        <p class="fs-1 fw-bolder text-center">World Blood Donors Day</p>
+                        <p class="fs ps-5 fw-bolder ">World Blood Donors Day</p>
                     </div> 
                     <div class="app-txt">
                         <p>
@@ -55,7 +68,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row pt-3">
                     <div class="col-lg-4 txt-app">
                         <div class="">
                             <p style="font-size:16px;margin-bottom:8px;"><i class="fa-regular fa-map" style="font-size:20px;padding-right:5px;color: #196cb3;"></i>Location:</p>
@@ -87,8 +100,29 @@
                     </div>
 
                     <div class="col-lg-8">
-                        <div class="">
+                        <div class="col-lg-12 col-12">
                             <h4 class="text-center">Register today</h4>
+                            
+                            <form method="post">
+                                <div class="mb-2">
+                                    <input type="text" class="form-control form-control-lg" asp-for="Name" placeholder="Your Name" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+
+                                <div class="mb-2">
+                                    <input type="text" class="form-control form-control-lg" asp-for="Email" placeholder="Email" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+
+                                <div class="mb-2">
+                                    <input type="text" class="form-control form-control-lg" asp-for="PhoneNumber" placeholder="PhoneNumber" />
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                </div>
+
+                                <div class="text-center pt-3">
+                                    <button type="submit" class="fs-5 p-3 rounded-3 bg-danger text-white">Make an Appointment</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

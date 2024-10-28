@@ -1,4 +1,5 @@
 ﻿using Blood_Bank_System.Data;
+using Blood_Bank_System.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blood_Bank_System.Controllers
@@ -20,6 +21,20 @@ namespace Blood_Bank_System.Controllers
         public IActionResult AddAppoint()
         {
             return View();
+        }
+
+        [HttpPost]
+
+        public IActionResult AddAppoint(IndexModel Appoint)
+        {
+            if (ModelState.IsValid)
+            {
+                c2.AppointmentRegister.Add(Appoint);
+                c2.SaveChanges();
+                return RedirectToAction("AddAppoint");
+            }
+
+            return View(Appoint);
         }
 
     }
