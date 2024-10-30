@@ -17,6 +17,10 @@ namespace Blood_Bank_System.Controllers
         {
             return View();
         }
+        public IActionResult Menunav()
+        {
+            return View();
+        }
 
         public IActionResult About()
         {
