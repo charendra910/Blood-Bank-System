@@ -3,68 +3,179 @@
     ViewData["Title"] = "Menunav";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<br />
-<br />
 
 <style>
-    .no-arrow::after {
-        display: none;
+    .div1 {
+        background-image: url('@Url.Content("~/images/header-bg.webp")');
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 400px;
+        opacity: 0.7;
+        z-index: 1;
+        padding: 150px;
+        font-size: 30px;
+        font-weight: bold;
     }
 
+    .txt-rpl {
+        padding-top: 50px;
+        position: relative;
+        text-align: center;
+        z-index: 2;
+        font-size: 40px;
+        color: black;
+        letter-spacing: 1em;
+    }
+   h1{
+        font-size:30px;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        color: #555555;
+        line-height: 36px;
+   }
+   .p1{
+        font: 17px / 28px 'Poppins', sans-serif;
+        color: #555555;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        margin: 0 0 12px;
+        padding: 0;
+   }
+
+    .event-content-title {
+        font-size: 24px;
+        border-bottom: 3px solid #eeeeee;
+        color: #5c5c5c;
+        padding-bottom: 15px;
+        position: relative;
+    }
+
+        .event-content-title:after {
+            bottom: -3px;
+            content: "";
+            height: 3px;
+            left: 0;
+            position: absolute;
+            width: 32px;
+            background: #EF3D32;
+        }
+
+    .event-sub-content-title {
+        margin-top: 12px;
+        font-weight: bold;
+        display: block;
+    }
+
+        .event-sub-content-title em.date {
+            font-weight: normal;
+            border-bottom: 1px dashed #b3b3b3;
+            cursor: help;
+        }
+
+    .event-content-info {
+        font-size: 16px;
+    }
+    h4{
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        color: #555555;
+        line-height: 36px;
+        margin: 0 0 16px 0;
+    }
+    }
 </style>
 
-<h1>Menunav</h1>
-<br />
-
-<br />
-<br />
-@* <nav class="navbar navbar-expand-lg  bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle no-arrow" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown link
-                    </a>
-                    <ul class="dropdown-menu">
-                        
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something here</a></li>
-                    </ul>
-                </li>
-
-            </ul>
+<section>
+    <div class="container-fluid div1">
+        <div class="txt-rpl">
+            SINGLE CAMPAIGNS
         </div>
     </div>
-</nav> *@
-
-
-
-
-
-
-
-
-
-
-
-
+</section>
 
 <br />
 <br />
-<br />
-<br />
-<br />
+
+<section class="container-fluid mt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-10 col-12">
+                <img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/1C7B/production/_118919270_blood.jpg" class="img-fluid w-100" alt="Blood Donation Day" />
+
+                <div class="mt-4">
+                    <h1>International Blood Donation Day - 2024</h1>
+                    <p class="single-post-meta mt-2" style="font-size:18px;font-family: 'Montserrat', sans-serif;color:#555555;font-weight: 500;"><i class="fa fa-user"></i>&nbsp; Bill Gates &nbsp; &nbsp; <i class="fa fa-share"></i>&nbsp; Blood, Save Life</p>
+                </div>
+
+                <div class="single-post-inner-content p1">
+                    <p>Welcome to our Campaigns page, where we bring together communities through blood donation initiatives aimed at saving lives and supporting those in urgent need.</p>
+                    <p>Each campaign is a chance to make a significant impact by raising awareness and encouraging compassion. Our current efforts focus on ensuring blood availability for emergencies, supporting hospitals, and helping patients with critical health conditions. 
+                       By joining a campaign, you can contribute to a life-saving mission that aids accident victims and those requiring long-term care. Explore our campaigns and become a donor hero today every drop counts!
+                    </p>
+                    <p>Together, we can foster a culture of giving and solidarity, inspiring others to join our cause. Explore our campaigns and become a donor hero today every drop counts!
+                       Join us in our mission to save lives through blood donation, as every donation has the power to change someone's life forever which will be great for them.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-10 col-12 d-flex">
+                <div class="col-sm-4">
+
+                    <h4 class="event-content-title">Details</h4>
+
+                    <p class="event-content-info">
+
+                        <span class="event-sub-content-title">Date:  <em class="date">August 17, 2016</em></span>
+
+                        <span class="event-sub-content-title">Cost:</span>
+                        Free
+                        <span class="event-sub-content-title">Event Category:</span>
+                        <a href="#">Main Events</a>
+                        <span class="event-sub-content-title">Website:</span>
+                        <a href="#" title="www.codeecstasy.com ">http://www.codeecstasy.com </a>
+                    </p>
+                </div> <!-- end .col-sm-4  -->
+
+                <div class="col-sm-3">
+
+                    <h4 class="event-content-title">Organizer</h4>
+
+                    <p class="event-content-info">
+                        Blood Donation Center <br />
+                        <span class="event-sub-content-title">Phone:</span>
+                        01 4537 8639 243  <br />
+                        <span class="event-sub-content-title">Email:</span>
+                        <a href="#" title="info@codeecstasy.com">info@codeecstasy.com </a>
+                        <span class="event-sub-content-title">Website:</span>
+                        <a href="#" title="www.codeecstasy.com ">http://booking.codeecstasy.com </a>
+                    </p>
+
+                </div> <!-- end .col-sm-4  -->
+
+                <div class="col-sm-3 " style="margin-left:110px;">
+
+                    <h4 class="event-content-title">Venue</h4>
+
+                    <p class="event-content-info">
+                        Almond Street <br />
+                        42 Almond St <br />
+                        Laredo, TX 78041 United States + Google Map <br />
+                        <span class="event-sub-content-title">Phone:</span>
+                        01 8745 4362 329 <br />
+                        <span class="event-sub-content-title">Website:</span>
+                        <a href="#" title="www.codeecstasy.com ">http://venue.codeecstasy.com </a>
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

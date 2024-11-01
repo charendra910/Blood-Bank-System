@@ -235,6 +235,14 @@
             height: 3rem;
             border-width: 0.3rem;
         }
+        /* CSS to hide the dropdown arrow */
+        .no-arrow::after {
+            display: none!important;
+        }
+
+        .itms-camp:hover{
+            background-color:dimgrey;
+        }
 
     </style>
 
@@ -243,35 +251,42 @@
 
     <!-- Navbar start here -->
 
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top" style="height: 80px; font-size:20px;">
         <!-- Navbar code here -->
-        <header>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top" style="height: 80px; font-size:20px;">
-                <div class="container-fluid">
+    <header class="container-fluid">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-toggleable-lg navbar-light bg-white border-bottom box-shadow p-4 fixed-top" >
+                
                     <!-- Navbar brand with padding-left and icon -->
-                    <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Service" style="padding-left: 50px; font-weight:bold; font-size:19px;">
+                    <a class="navbar-brand d-flex align-items-center ps-5" asp-area="" asp-controller="Home" asp-action="Service" >
                         <img src="~/images/favicon.png" alt="Icon" style="width: 30px; height: 30px; "> <!-- Replace with your image path -->
-                        <span class="ms-2">BLOOD BANK MANAGEMENT</span>
+                        <span class="ms-2 fw-bold">BLOOD BANK MANAGEMENT</span>
                     </a>
 
                     <!-- Toggler for smaller screens -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bloodMenu">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
                     <!-- Centered navbar items -->
-                    <div class="navbar-collapse collapse justify-content-center">
-                        <ul class="navbar-nav" style="margin-left:80px; font-size:17px; font-weight:bold;">
+                    <div class="collapse navbar-collapse justify-content-center" id="bloodMenu">
+                        <ul class="navbar-nav" style="margin-left:5px; font-size:17px; font-weight:bold;">
                             <li class="nav-item" >
                                 <a class="nav-link" asp-area="" asp-controller="IndexAppoint" asp-action="AddAppoint">HOME</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link " asp-area="" asp-controller="Home" asp-action="About">ABOUT US</a>
                             </li>
-                             <li class="nav-item">
-                                <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Campaign">CAMPAIGN</a>
-                            </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle no-arrow" href="#" id="campaignDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                CAMPAIGNS
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="campaignDropdown">
+                                <li><a class="dropdown-item itms-camp" asp-area="" asp-controller="Home" asp-action="Campaign">ALL CAMPAIGN</a></li>
+                                <li><a class="dropdown-item itms-camp" asp-area="" asp-controller="Home" asp-action="Menunav">SINGLE CAMPAIGN</a></li>
+                            </ul>
+                        </li>
+
                             <li class="nav-item">
                                 <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Service">SERVICES</a>
                             </li>
@@ -283,11 +298,11 @@
                             </li>
 
                         </ul>
-                    </div>
                 </div>
             </nav>
-        </header>
-    </nav>
+        </div>
+    </header>
+ 
 
     <!-- Navbar end here -->
 
@@ -441,7 +456,7 @@
 
 
 
-    <script>
+   @*  <script>
         document.addEventListener("DOMContentLoaded", function () {
             const spinner = document.getElementById("spinner");
 
@@ -457,12 +472,13 @@
                     // Delay page load by 1.5 seconds (adjust as desired)
                     setTimeout(() => {
                         window.location.href = this.href;
-                    }, 600);
+                    }, 100);
                 });
             });
         });
-    </script>
+    </script> *@
 
 
 </body>
 </html>
+
