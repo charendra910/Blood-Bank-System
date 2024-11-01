@@ -228,6 +228,14 @@
             padding:0px;
 
         }
+
+        /* Add this CSS in your main CSS file */
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            border-width: 0.3rem;
+        }
+
     </style>
 
 </head>
@@ -413,6 +421,16 @@
         </footer>
     </div>
 
+
+    <!-- Spinner HTML -->
+    <div id="spinner" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.8); z-index:1000;">
+        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts here -->
 
 
@@ -420,6 +438,31 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const spinner = document.getElementById("spinner");
+
+            // Select all anchor tags for internal links
+            document.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", function (e) {
+                    // Prevent immediate navigation
+                    e.preventDefault();
+
+                    // Show spinner
+                    spinner.style.display = "block";
+
+                    // Delay page load by 1.5 seconds (adjust as desired)
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 600);
+                });
+            });
+        });
+    </script>
+
 
 </body>
 </html>
