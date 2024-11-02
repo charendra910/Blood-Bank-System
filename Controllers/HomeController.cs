@@ -22,6 +22,20 @@ namespace Blood_Bank_System.Controllers
             return View();
         }
 
+        public IActionResult Camp2()
+        {
+            return View();
+        }
+
+        public IActionResult NextPageAction()
+        {
+            return View("Camp2");
+        }
+
+        public IActionResult PreviousPageAction()
+        {
+            return View("Menunav");
+        }
         public IActionResult About()
         {
             return View();
