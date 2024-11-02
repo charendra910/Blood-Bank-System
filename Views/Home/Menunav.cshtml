@@ -58,7 +58,7 @@
             height: 3px;
             left: 0;
             position: absolute;
-            width: 32px;
+            width: 40px;
             background: #EF3D32;
         }
 
@@ -85,7 +85,12 @@
         line-height: 36px;
         margin: 0 0 16px 0;
     }
+
+    .no-link {
+        color: inherit; /* Inherit color from parent */
+        text-decoration: none; /* Remove underline */
     }
+
 </style>
 
 <section>
@@ -125,24 +130,24 @@
 
         <div class="row justify-content-center">
             <div class="col-lg-10 col-md-10 col-12 d-flex">
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-12">
 
                     <h4 class="event-content-title">Details</h4>
 
                     <p class="event-content-info">
-
+                        
                         <span class="event-sub-content-title">Date:  <em class="date">August 17, 2016</em></span>
 
                         <span class="event-sub-content-title">Cost:</span>
                         Free
                         <span class="event-sub-content-title">Event Category:</span>
-                        <a href="#">Main Events</a>
+                        <a href="#" class="no-link">Main Events</a>
                         <span class="event-sub-content-title">Website:</span>
-                        <a href="#" title="www.codeecstasy.com ">http://www.codeecstasy.com </a>
+                        <a href="#" class="no-link" title="www.codeecstasy.com ">http://www.codeecstasy.com </a>
                     </p>
                 </div> <!-- end .col-sm-4  -->
 
-                <div class="col-sm-3">
+                <div class="col-sm-4 col-12">
 
                     <h4 class="event-content-title">Organizer</h4>
 
@@ -151,14 +156,14 @@
                         <span class="event-sub-content-title">Phone:</span>
                         01 4537 8639 243  <br />
                         <span class="event-sub-content-title">Email:</span>
-                        <a href="#" title="info@codeecstasy.com">info@codeecstasy.com </a>
+                        <a href="#" class="no-link" title="info@codeecstasy.com">info@codeecstasy.com </a>
                         <span class="event-sub-content-title">Website:</span>
-                        <a href="#" title="www.codeecstasy.com ">http://booking.codeecstasy.com </a>
+                        <a href="#" class="no-link" title="www.codeecstasy.com ">http://booking.codeecstasy.com </a>
                     </p>
 
                 </div> <!-- end .col-sm-4  -->
 
-                <div class="col-sm-3 " style="margin-left:110px;">
+                <div class="col-sm-4 col-12">
 
                     <h4 class="event-content-title">Venue</h4>
 
@@ -169,13 +174,23 @@
                         <span class="event-sub-content-title">Phone:</span>
                         01 8745 4362 329 <br />
                         <span class="event-sub-content-title">Website:</span>
-                        <a href="#" title="www.codeecstasy.com ">http://venue.codeecstasy.com </a>
+                        <a href="#" class="no-link" title="www.codeecstasy.com ">http://venue.codeecstasy.com </a>
                     </p>
 
 
                 </div>
+
             </div>
+
         </div>
+
+        <div class="row justify-content-center mt-5">
+             <div class="col-lg-10 col-md-10 col-12">
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14771.964923975444!2d70.9004241!3d22.2404115!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959b4a660019ee9%3A0x3d6254f36ed0e794!2sRK%20University%20Main%20Campus!5e0!3m2!1sen!2sin!4v1730531219164!5m2!1sen!2sin" style="border:0;width:100%;min-height:400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="img-fluid"></iframe>
+             </div>
+        </div>
+
     </div>
 </section>
+
 
