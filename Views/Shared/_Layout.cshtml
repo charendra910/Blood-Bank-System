@@ -254,7 +254,7 @@
         <!-- Navbar code here -->
     <header class="container-fluid">
         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-toggleable-lg navbar-light bg-white border-bottom box-shadow p-4 fixed-top" >
+            <nav class="navbar navbar-expand-lg navbar-toggleable-lg navbar-light bg-white border-bottom box-shadow p-3 fixed-top" >
                 
                     <!-- Navbar brand with padding-left and icon -->
                     <a class="navbar-brand d-flex align-items-center ps-5" asp-area="" asp-controller="Home" asp-action="Service" >
@@ -293,11 +293,14 @@
                             <li class="nav-item">
                                 <a class="nav-link " asp-area="" asp-controller="Contactus" asp-action="AddContactUs">CONTACT</a>
                             </li>
-@*                             <li class="nav-item">
-                                <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Menunav">NAVBAR</a>
-                            </li> *@
-
                         </ul>
+
+                        <ul class="navbar-nav" style="margin-left:220px;">
+                            <li class="nav-item fw-bold d-flex align-content-center">
+                                <i class="fa-solid fa-user-tie" style="margin-top:12px; font-size:18px;"></i> <a class="nav-link" asp-area="" asp-controller="Admin" asp-action="Login">ADMIN</a>
+                            </li>
+                        </ul>
+                       
                 </div>
             </nav>
         </div>
