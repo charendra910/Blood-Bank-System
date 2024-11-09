@@ -6,9 +6,18 @@
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
 }
 
+
+<i class="fa-regular fa-user"></i>
 <div class="account-container d-flex justify-content-center mt-5">
-    <div class="account-box">
-        <h2 class="text-center mb-4">Login</h2>
+    <div class="account-box glass-form ">
+
+        <div class="text-center mb-4 d-flex justify-content-center align-items-center background-color:transparent;">
+            <img src="https://cdn0.iconfinder.com/data/icons/man-user-human-avatar-profile-business-person/100/03-1User_13-512.png"
+                 class="img-fluid me-0" style=" height: 50px; margin-right: 8px;" alt="User Icon" />
+            <h2 class="m-0">Admin</h2>
+        </div>
+
+
         <form asp-action="Login" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="mb-4">

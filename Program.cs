@@ -2,6 +2,7 @@ using Blood_Bank_System.Data;
 using Blood_Bank_System.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,6 +51,13 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "Admin")),
+    RequestPath = "/Admin"
+});
+
 app.UseRouting();
 
 app.UseAuthorization();
@@ -57,5 +65,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=IndexAppoint}/{action=AddAppoint}/{id?}");
+//pattern: "{controller=Admin}/{action=Dashboard}/{id?}");
+
 
 app.Run();

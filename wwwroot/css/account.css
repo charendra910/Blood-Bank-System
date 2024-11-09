@@ -17,9 +17,27 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     max-width: 500px;
     width: 100%;
-    opacity: .9;
+    opacity: 0.8;
 }
 
-body {
+/*body {
     background-image: url('/images/account-bg.jpg');
+}*/
+
+body {
+    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    height: 100vh;
+}
+
+.glass-form {
+    max-width: 400px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Transparent white */
+    backdrop-filter: blur(10px); /* Blur effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
 }
