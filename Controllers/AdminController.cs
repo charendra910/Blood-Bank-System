@@ -2,6 +2,7 @@
 using Blood_Bank_System.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Blood_Bank_System.Controllers
 {
@@ -30,20 +31,33 @@ namespace Blood_Bank_System.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+                // Find user by email to get their full name
+                var user = await userManager.FindByEmailAsync(model.Email);
 
-                if (result.Succeeded)
+                if (user != null)
                 {
-                    return RedirectToAction("Dashboard", "Admin");
+                    // Attempt sign-in
+                    var result = await signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
+
+                    if (result.Succeeded)
+                    {
+                        // Add FullName claim if it doesn't exist
+                        var claims = await userManager.GetClaimsAsync(user);
+                        if (!claims.Any(c => c.Type == "FullName"))
+                        {
+                            await userManager.AddClaimAsync(user, new Claim("FullName", user.FullName ?? string.Empty));
+                            await signInManager.RefreshSignInAsync(user);  // Refresh sign-in to apply new claims
+                        }
+
+                        return RedirectToAction("Dashboard", "Admin");
+                    }
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Email or password is incorrect.");
-                    return View(model);
-                }
+
+                ModelState.AddModelError("", "Email or password is incorrect.");
             }
             return View(model);
         }
+
 
         public IActionResult Register()
         {
@@ -66,7 +80,7 @@ namespace Blood_Bank_System.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Login", "Account");
+                    return RedirectToAction("Login", "Admin");
                 }
                 else
                 {
