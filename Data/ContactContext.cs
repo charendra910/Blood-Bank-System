@@ -10,6 +10,8 @@ namespace Blood_Bank_System.Data
 
         }
 
+
+
         public DbSet<ContactModel> Contactregister { get; set; }
     }
 }
