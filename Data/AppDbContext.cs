@@ -6,7 +6,7 @@ namespace Blood_Bank_System.Data
 {
     public class AppDbContext : IdentityDbContext<UsersModel>
     {
-        public AppDbContext(DbContextOptions options) : base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
         }
