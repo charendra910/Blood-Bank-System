@@ -12,6 +12,8 @@
     <link href="/Admin/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -68,7 +70,7 @@
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6> @User.FindFirst("FullName")?.Value</h6>
+                            <h6> <p class="mb-0">Hi!</p> @User.FindFirst("FullName")?.Value</h6>
                           @*   <span>@User.FindFirst("FullName")?.Value</span> *@
                         </li>
                         <li>
@@ -136,33 +138,48 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-journal-text"></i><span>Blood Donors</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="forms-elements.html">
-                            <i class="bi bi-circle"></i><span>Form Elements</span>
+                            <i class="bi bi-circle"></i><span>Add New Donors</span>
                         </a>
                     </li>
                     <li>
                         <a href="forms-layouts.html">
-                            <i class="bi bi-circle"></i><span>Form Layouts</span>
+                            <i class="bi bi-circle"></i><span>Update Donors</span>
                         </a>
                     </li>
                     <li>
                         <a href="forms-editors.html">
-                            <i class="bi bi-circle"></i><span>Form Editors</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="forms-validation.html">
-                            <i class="bi bi-circle"></i><span>Form Validation</span>
+                            <i class="bi bi-circle"></i><span>Donors Details</span>
                         </a>
                     </li>
                 </ul>
             </li><!-- End Forms Nav -->
-
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#forms-nav1" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-journal-text"></i><span>Blood Receivers</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="forms-nav1" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="forms-elements.html">
+                            <i class="bi bi-circle"></i><span>Add Blood Recievers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="forms-layouts.html">
+                            <i class="bi bi-circle"></i><span>Update Receivers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="forms-editors.html">
+                            <i class="bi bi-circle"></i><span>Receivers Details</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
             <li class="nav-heading">Pages</li>
 
@@ -173,8 +190,12 @@
                 </a>
             </li><!-- End Profile Page Nav -->
 
-          
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="users-profile.html">
+                    <i class="fa-solid fa-droplet"></i>
+                    <span>Stock</span>
+                </a>
+            </li>
 
 @* 
             <li class="nav-item">
