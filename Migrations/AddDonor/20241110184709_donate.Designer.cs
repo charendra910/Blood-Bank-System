@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blood_Bank_System.Migrations.AddDonor
 {
     [DbContext(typeof(AddDonorContext))]
-    [Migration("20241110170349_add")]
-    partial class add
+    [Migration("20241110184709_donate")]
+    partial class donate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,17 +53,17 @@ namespace Blood_Bank_System.Migrations.AddDonor
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<string>("Gender")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("LastDonationDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("State")
                         .IsRequired()
@@ -72,7 +72,7 @@ namespace Blood_Bank_System.Migrations.AddDonor
 
                     b.HasKey("DonorId");
 
-                    b.ToTable("BloodDonors");
+                    b.ToTable("AddBloodDonors");
                 });
 #pragma warning restore 612, 618
         }

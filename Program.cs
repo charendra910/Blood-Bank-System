@@ -39,7 +39,10 @@ builder.Services.AddIdentity<UsersModel, IdentityRole>(options =>
 
 //registering dbcontext for the blood donors
 builder.Services.AddDbContext<AddDonorContext>
-    (options => options.UseSqlServer(builder.Configuration.GetConnectionString("con")));
+    (add => add.UseSqlServer(builder.Configuration.GetConnectionString("con")));
+
+builder.Services.AddDbContext<ReceiveBloodContext>
+    (s1 => s1.UseSqlServer(builder.Configuration.GetConnectionString("con")));
 
 
 var app = builder.Build();

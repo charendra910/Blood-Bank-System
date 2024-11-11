@@ -1,0 +1,117 @@
+﻿@model AddDonorModel
+
+@{
+    ViewData["Title"] = "AddDonors";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show top-alert" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        padding-top: 5px;
+    }
+    .txt{
+        font-size: 42px;
+        line-height: 42px;
+        margin-bottom: 20px;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 0em;
+        font-weight: 700;
+        color: #555555;
+    }
+    .form-label {
+        font-weight: bold;
+    }
+
+    .form-field {
+        margin-bottom: 15px; /* Set your preferred margin-bottom here */
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+
+    .error-message {
+        position: absolute;
+        right: 10px; /* Adjust this value as needed for spacing */
+        top: 70%; /* Center vertically */
+        transform: translateY(-50%); /* Center the error message */
+        font-size: 12px; /* Small font size */
+        color: #dc3545; /* Red color for errors */
+        pointer-events: none; /* Make sure the error message does not interfere with input */
+    }
+</style>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <h2 class="text-center txt">Add New Donor</h2>
+            <form method="post">
+                <div class="form-field position-relative">
+                    <label for="FullName" class="form-label">Full Name</label>
+                    <input asp-for="FullName" class="form-control form-control-lg" />
+                    <span asp-validation-for="FullName" class="text-danger error-message"></span>
+                </div>
+
+                <div class="form-field position-relative">
+                    <label for="Age" class="form-label">Age</label>
+                    <input asp-for="Age" class="form-control form-control-lg" type="number" min="18" max="100" />
+                    <span asp-validation-for="Age" class="text-danger error-message"></span>
+                </div>
+
+                <div class="form-field position-relative">
+                    <label for="Gender" class="form-label">Gender</label>
+                    <select asp-for="Gender" class="form-control form-control-lg">
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger error-message"></span>
+                </div>
+
+                <div class="form-field position-relative">
+                    <label for="BloodType" class="form-label">Blood Type</label>
+                    <select asp-for="BloodType" class="form-control form-control-lg">
+                        <option value="">Select Blood Type</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                    <span asp-validation-for="BloodType" class="text-danger error-message"></span>
+                </div>
+
+                <div class="form-field position-relative">
+                    <label for="ContactNumber" class="form-label">Contact Number</label>
+                    <input asp-for="ContactNumber" class="form-control form-control-lg" type="tel" pattern="[6-9]{1}[0-9]{9}" />
+                    <span asp-validation-for="ContactNumber" class="text-danger error-message"></span>
+                </div>
+
+                <div class="form-field position-relative">
+                    <label for="LastDonationDate" class="form-label">Last Donation Date</label>
+                    <input asp-for="LastDonationDate" class="form-control form-control-lg" type="date" />
+                    <span asp-validation-for="LastDonationDate" class="text-danger error-message"></span>
+                </div>
+
+                <div class="mt-4 text-center col-md-12 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">Add Donor</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

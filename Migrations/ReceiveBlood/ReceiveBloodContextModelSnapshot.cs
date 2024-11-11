@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Blood_Bank_System.Migrations.AddDonor
+namespace Blood_Bank_System.Migrations.ReceiveBlood
 {
-    [DbContext(typeof(AddDonorContext))]
-    partial class AddDonorContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ReceiveBloodContext))]
+    partial class ReceiveBloodContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -22,13 +22,17 @@ namespace Blood_Bank_System.Migrations.AddDonor
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Blood_Bank_System.Models.AddDonorModel", b =>
+            modelBuilder.Entity("Blood_Bank_System.Models.ReceiveBloodModel", b =>
                 {
-                    b.Property<int>("DonorId")
+                    b.Property<int>("ReceiverID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DonorId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReceiverID"));
+
+                    b.Property<string>("Address")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<int>("Age")
                         .HasColumnType("int");
@@ -37,17 +41,14 @@ namespace Blood_Bank_System.Migrations.AddDonor
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<string>("ContactNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("DateOfRequirement")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
@@ -59,17 +60,13 @@ namespace Blood_Bank_System.Migrations.AddDonor
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("LastDonationDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("MedicalHistory")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
-                    b.Property<string>("State")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.HasKey("ReceiverID");
 
-                    b.HasKey("DonorId");
-
-                    b.ToTable("AddBloodDonors");
+                    b.ToTable("BloodReceivers");
                 });
 #pragma warning restore 612, 618
         }

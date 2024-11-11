@@ -7,9 +7,9 @@ namespace Blood_Bank_System.Models
         [Key]
         public int DonorId { get; set; }
 
-        [Required(ErrorMessage = "Name is required")]
-        [StringLength(30, ErrorMessage = "Name cannot be longer than 30 characters")]
-        public string Name { get; set; }
+        [Required(ErrorMessage = "Full name is required")]
+        [StringLength(100, ErrorMessage = "Full name cannot be longer than 100 characters")]
+        public string FullName { get; set; }
 
         [Required(ErrorMessage = "Age is required")]
         [Range(18, 60, ErrorMessage = "Age must be between 18 and 65")]
