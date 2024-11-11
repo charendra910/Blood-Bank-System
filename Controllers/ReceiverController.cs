@@ -27,6 +27,8 @@ namespace Blood_Bank_System.Controllers
             {
                 r2.BloodReceivers.Add(take);
                 r2.SaveChanges();
+                TempData["SuccessMessage"] = "Receiver data added successfully.";
+
                 return RedirectToAction("Receive");
             }
             // If ModelState is not valid, return the view with validation errors

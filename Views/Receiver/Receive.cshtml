@@ -5,9 +5,17 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success text-center">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+
 <div style="margin-top:10px;">
     <center>
-        <h1><b>RECEIVERS DETAILS</b></h1>
+        <h1 class="space"><b>RECEIVERS DETAILS</b></h1>
     </center>
 </div>
 
@@ -15,7 +23,9 @@
     body {
         background-color: white;
     }
-
+    .space{
+        letter-spacing:0.20rem;
+    }
     .form-control {
         background-color: #f0f0f0;
     }
