@@ -12,10 +12,7 @@ namespace Blood_Bank_System.Controllers
         {
             this.c1 = c1;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+
 
         // GET action to display the form
         [HttpGet]

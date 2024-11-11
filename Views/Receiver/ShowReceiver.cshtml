@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ReceiveBloodModel>
+@{
+    ViewData["Title"] = "ShowReceiver";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+ <!-- Update with your actual model namespace -->
+
+<style>
+    .space {
+        font-size: 42px;
+        line-height: 42px;
+        margin-bottom: 20px; 
+        font-weight: 700;
+        color: #555555;
+        letter-spacing: 0.20rem;
+    }
+
+</style>
+
+
+<div class="container">
+    <h2 class="mb-4 space text-center">ALL RECEIVERS</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>UserId</th>
+                <th>Full Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Blood Type</th>
+                <th>Contact Number</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Date of Requirement</th>
+                <th>Medical History</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var receiver in Model)
+            {
+                <tr>
+                    <td>@receiver.ReceiverID</td>
+                    <td>@receiver.FullName</td>
+                    <td>@receiver.Age</td>
+                    <td>@receiver.Gender</td>
+                    <td>@receiver.BloodType</td>
+                    <td>@receiver.ContactNumber</td>
+                    <td>@receiver.Email</td>
+                    <td>@receiver.Address</td>
+                    <td>@receiver.DateOfRequirement</td>
+                    <td>@receiver.MedicalHistory</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,235 @@
+﻿@* @model Blood_Bank_System.Models.ReceiveBloodModel
+
+@{
+    ViewData["Title"] = "EditReceiversData";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>EditReceiversData</h1>
+<div style="margin-top:10px;">
+    <center>
+        <h1><b>UPDATE TASK DETAILS</b></h1>
+    </center>
+</div>
+
+<br />
+ <form method="post" class="row g-8">
+    <div class="col-md-6">
+        <!-- Receiver ID -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="ReceiverID">Receiver ID</label>
+                <input asp-for="ReceiverID" class="form-control" readonly />
+                <span asp-validation-for="ReceiverID" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Full Name -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="FullName">Full Name</label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Age -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Age">Age</label>
+                <input asp-for="Age" class="form-control" type="number" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Gender -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Gender">Gender</label>
+                <input asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Blood Type -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="BloodType">Blood Type</label>
+                <input asp-for="BloodType" class="form-control" />
+                <span asp-validation-for="BloodType" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <!-- Contact Number -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="ContactNumber">Contact Number</label>
+                <input asp-for="ContactNumber" class="form-control" />
+                <span asp-validation-for="ContactNumber" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Email">Email</label>
+                <input asp-for="Email" type="email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Address -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Address">Address</label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Date of Requirement -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="DateOfRequirement">Date of Requirement</label>
+                <input asp-for="DateOfRequirement" type="date" class="form-control" />
+                <span asp-validation-for="DateOfRequirement" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Medical History -->
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="MedicalHistory">Medical History / Reason for Requirement</label>
+                <textarea asp-for="MedicalHistory" class="form-control"></textarea>
+                <span asp-validation-for="MedicalHistory" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit and Back buttons -->
+    <div class="col-md-12 mt-4">
+        <button class="btn btn-primary w-100" type="submit">Update Receiver Details</button>
+    </div>
+
+    <div class="col-md-12 mt-3">
+        <button class="btn btn-secondary w-100" asp-controller="Receiver" asp-action="Index" type="button">Back to List</button>
+    </div>
+</form>
+
+<style>
+    body {
+        background-color: antiquewhite; /* Choose your desired background color */
+    }
+</style>  *@
+
+@model Blood_Bank_System.Models.ReceiveBloodModel
+
+@{
+    ViewData["Title"] = "EditReceiversData";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:10px;">
+    <center>
+        <h1><b>UPDATE BLOOD RECEIVER DETAILS</b></h1>
+    </center>
+</div>
+
+<br />
+
+<form method="post" asp-action="EditReceiversData" class="row g-8">
+    <div class="col-md-6">
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="ReceiverID">Receiver ID</label>
+                <input asp-for="ReceiverID" class="form-control" readonly />
+                <span asp-validation-for="ReceiverID" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="FullName">Full Name</label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Age">Age</label>
+                <input asp-for="Age" type="number" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Gender">Gender</label>
+                <input asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="BloodType">Blood Type</label>
+                <input asp-for="BloodType" class="form-control" />
+                <span asp-validation-for="BloodType" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="ContactNumber">Contact Number</label>
+                <input asp-for="ContactNumber" class="form-control" />
+                <span asp-validation-for="ContactNumber" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Email">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Address">Address</label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="DateOfRequirement">Date of Requirement</label>
+                <input asp-for="DateOfRequirement" type="date" class="form-control" />
+                <span asp-validation-for="DateOfRequirement" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="MedicalHistory">Medical History / Reason for Requirement</label>
+                <textarea asp-for="MedicalHistory" class="form-control"></textarea>
+                <span asp-validation-for="MedicalHistory" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <br />
+        <button class="btn btn-primary" style="width:630px;" type="submit">UPDATE BLOOD RECEIVER DETAILS</button>
+    </div>
+</form>
+
+<style>
+    body {
+        background-color: antiquewhite; /* Choose your desired background color */
+    }
+</style>
