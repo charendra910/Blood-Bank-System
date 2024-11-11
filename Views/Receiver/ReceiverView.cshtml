@@ -4,100 +4,13 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-@* <!DOCTYPE html>
-<html>
-<head>
-    <style>
-
-        body {
-            background-color: antiquewhite;
-        }
-
-        .approve-btn {
-            padding-left: 50px;
-            padding-right: 40px;
-        }
-
-        .reject-btn {
-            padding-left: 50px;
-            padding-right: 50px;
-        }
-
-        .space{
-        font-size: 42px;
-        line-height: 42px;
-        margin-bottom: 20px;
-        font-weight: 700;
-        color: #555555;
-        letter-spacing: 0.20rem;
-        }
-
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <div class="row p-3 justify-content-center">
-            <div class="col-6">
-                <h2 class="text-center space">BLOOD RECEIVERS DATA</h2>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Receiver ID</th>
-                    <th>Full Name</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>Blood Type</th>
-                    <th>Contact Number</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <th>Date of Requirement</th>
-                    <th>Medical History</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var receiver in Model)
-                {
-                    <tr>
-                        <td>@receiver.ReceiverID</td>
-                        <td>@receiver.FullName</td>
-                        <td>@receiver.Age</td>
-                        <td>@receiver.Gender</td>
-                        <td>@receiver.BloodType</td>
-                        <td>@receiver.ContactNumber</td>
-                        <td>@receiver.Email</td>
-                        <td>@receiver.Address</td>
-                        <td>@receiver.DateOfRequirement.ToShortDateString()</td>
-                        <td>@receiver.MedicalHistory</td>
-                        <td>
-                            <div class="d-flex justify-content-between mt-1">
-                                <a class="btn btn-primary" asp-controller="Receiver" asp-action="EditReceiversData" asp-route-ReceiverID="@receiver.ReceiverID">Edit</a>
-                                <a class="btn btn-danger w-100" asp-area="" asp-controller="Receiver" asp-action="ReceiverView" asp-route-id="@receiver.ReceiverID">Delete</a>
-                            </div>
-                        </td>
-
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-
-</body>
-</html> *@
-
 
 <!DOCTYPE html>
 <html>
 <head>
     <style>
         body {
-            background-color: antiquewhite; /* Choose your desired background color */
+            background-color: white; /* Choose your desired background color */
         }
 
         .box {
@@ -131,14 +44,23 @@
             padding-right: 50px;
         }
 
+        .space {
+            font-size: 42px;
+            line-height: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #555555;
+            letter-spacing: 0.20rem;
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="container p-4">
-        <div class="row p-3 justify-content-center">
-            <div class="col-6">
-                <h2 class="text-center">Update Task Details</h2>
+    <div class="container mt-2">
+        <div class="row justify-content-center">
+            <div class="col-6 mb-4">
+                <h2 class="text-center space">RECEIVERS DETAILS</h2>
             </div>
         </div>
     </div>
@@ -153,10 +75,10 @@
                     <th>Age</th>
                     <th>Gender</th>
                     <th>Blood Type</th>
-                    <th>Contact Number</th>
+                    <th>Contact</th>
                     <th>Address</th>
                     <th>Date of Requirement</th>
-                    <th>Medical History / Reason for Requirement</th>
+                    <th>Reason for Requirement</th>
                     <th>Operation</th>
                 </tr>
             </thead>
@@ -175,12 +97,18 @@
                         <td>@receiver.DateOfRequirement.ToString("yyyy-MM-dd")</td>
                         <td>@receiver.MedicalHistory</td>
                         <td role="group">
-                            <div class="row mb-2">
+                            <div class="mb-2">
+                                <div class="col-md-12 mb-2">
+                                    <a href="@Url.Action("EditReceiversData", "Receiver", new { id = receiver.ReceiverID })" class="btn btn-primary btn-sm w-100">Edit</a>
+                                </div>
                                 <div class="col-md-12">
-                                    <a href="@Url.Action("EditReceiversData", "Receiver", new { id = receiver.ReceiverID })">Edit</a>
+                                    <form method="post" action="@Url.Action("DeleteReceiver", "Receiver", new { id = receiver.ReceiverID })">
+                                        <button type="submit" class="btn btn-danger btn-sm w-100">Delete</button>
+                                    </form>
                                 </div>
                             </div>
                         </td>
+
                     </tr>
                 }
             </tbody>
