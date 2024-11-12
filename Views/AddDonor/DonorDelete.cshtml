@@ -1,16 +1,18 @@
-﻿@model IEnumerable<ReceiveBloodModel>
+﻿@model IEnumerable<AddDonorModel>
 
 @{
-    ViewData["Title"] = "ReceiverView";
+    ViewData["Title"] = "DonorDelete";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-@if (TempData["SuccessMessage1"] != null)
+
+@if (TempData["SuccessMessage"] != null)
 {
     <div class="alert alert-success text-center">
-        @TempData["SuccessMessage1"]
+        @TempData["SuccessMessage"]
     </div>
 }
+
 
 <!DOCTYPE html>
 <html>
@@ -67,7 +69,7 @@
     <div class="container mt-2">
         <div class="row justify-content-center">
             <div class="col-6 mb-4">
-                <h2 class="text-center space">RECEIVERS DETAILS</h2>
+                <h2 class="text-center space">DONORS DETAILS</h2>
             </div>
         </div>
     </div>
@@ -76,40 +78,40 @@
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Receiver ID</th>
+                    <th>Donors ID</th>
                     <th>Full Name</th>
-                    <th>Email</th>
                     <th>Age</th>
                     <th>Gender</th>
                     <th>Blood Type</th>
-                    <th>Contact</th>
-                    <th>Address</th>
-                    <th>Date of Requirement</th>
-                    <th>Reason for Requirement</th>
-                    <th>Operation</th>
+                    <th>Contact Number</th>
+                    <th>Email Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>LastDonationDate</th>
+                    <th>Operations</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var receiver in Model)
+                @foreach (var donor in Model)
                 {
                     <tr>
-                        <td>@receiver.ReceiverID</td>
-                        <td>@receiver.FullName</td>
-                        <td>@receiver.Email</td>
-                        <td>@receiver.Age</td>
-                        <td>@receiver.Gender</td>
-                        <td>@receiver.BloodType</td>
-                        <td>@receiver.ContactNumber</td>
-                        <td>@receiver.Address</td>
-                        <td>@receiver.DateOfRequirement.ToString("yyyy-MM-dd")</td>
-                        <td>@receiver.MedicalHistory</td>
+                        <td>@donor.DonorId</td>
+                        <td>@donor.FullName</td>
+                        <td>@donor.Age</td>
+                        <td>@donor.Gender</td>
+                        <td>@donor.BloodType</td>
+                        <td>@donor.ContactNumber</td>
+                        <td>@donor.Email</td>
+                        <td>@donor.City</td>
+                        <td>@donor.State</td>
+                        <td>@donor.LastDonationDate</td>
                         <td role="group">
                             <div class="mb-2">
                                 <div class="col-md-12 mb-2">
-                                    <a href="@Url.Action("EditReceiversData", "Receiver", new { id = receiver.ReceiverID })" class="btn btn-primary btn-sm w-100">Edit</a>
+                                    <a href="@Url.Action("EditDonors", "AddDonor", new { id = donor.DonorId })" class="btn btn-primary btn-sm w-100">Edit</a>
                                 </div>
                                 <div class="col-md-12">
-                                    <form method="post" action="@Url.Action("DeleteReceiver", "Receiver", new { id = receiver.ReceiverID })">
+                                    <form method="post" action="@Url.Action("DeleteReceiver", "Receiver", new { id = donor.DonorId })">
                                         <button type="submit" class="btn btn-danger btn-sm w-100">Delete</button>
                                     </form>
                                 </div>

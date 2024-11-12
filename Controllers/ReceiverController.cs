@@ -82,7 +82,19 @@ namespace Blood_Bank_System.Controllers
             return View(receiver); // Return the same view with validation errors if any
         }
 
+        public IActionResult ReceiverDelete(int Id)
+        {
+            var data = r2.BloodReceivers.Find(Id);
+            if (data != null)
+            {
+                r2.BloodReceivers.Remove(data);
+                r2.SaveChanges();
 
+                TempData["SuccessMessage1"] = "Receiver deleted successfully!";
+
+            }
+            return RedirectToAction("ReceiverView"); // Replace "Index" with the appropriate action name or URL
+        }
         //public IActionResult EditReceiversData(int ReceiverID)
         //{
         //    var editdata = r2.BloodReceivers.Find(ReceiverID);

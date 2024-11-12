@@ -5,8 +5,12 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>DonorsView</h1>
-
+@if (TempData["SuccessMessage1"] != null)
+{
+    <div class="alert alert-success text-center">
+        @TempData["SuccessMessage1"]
+    </div>
+}
 
 <!DOCTYPE html>
 <html>
@@ -105,7 +109,7 @@
                                     <a href="@Url.Action("EditDonors", "AddDonor", new { id = donor.DonorId })" class="btn btn-primary btn-sm w-100">Edit</a>
                                 </div>
                                 <div class="col-md-12">
-                                    <form method="post" action="@Url.Action("DeleteReceiver", "Receiver", new { id = donor.DonorId })">
+                                    <form method="post" action="@Url.Action("DonorDelete", "AddDonor", new { id = donor.DonorId })">
                                         <button type="submit" class="btn btn-danger btn-sm w-100">Delete</button>
                                     </form>
                                 </div>

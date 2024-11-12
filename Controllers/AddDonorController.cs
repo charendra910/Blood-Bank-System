@@ -85,8 +85,11 @@ namespace Blood_Bank_System.Controllers
             {
                 c1.AddBloodDonors.Remove(data);
                 c1.SaveChanges();
+
+                TempData["SuccessMessage1"] = "Donor deleted successfully!";
+
             }
-            return RedirectToAction("DonorDelete"); // Replace "Index" with the appropriate action name or URL
+            return RedirectToAction("DonorsView"); // Replace "Index" with the appropriate action name or URL
         }
     }
 }
