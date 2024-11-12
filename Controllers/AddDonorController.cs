@@ -77,5 +77,16 @@ namespace Blood_Bank_System.Controllers
 
             return View(donator); // Return the same view with validation errors if any
         }
+
+        public IActionResult DonorDelete(int Id)
+        {
+            var data = c1.AddBloodDonors.Find(Id);
+            if (data != null)
+            {
+                c1.AddBloodDonors.Remove(data);
+                c1.SaveChanges();
+            }
+            return RedirectToAction("DonorDelete"); // Replace "Index" with the appropriate action name or URL
+        }
     }
 }
