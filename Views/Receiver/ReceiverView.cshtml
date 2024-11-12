@@ -109,7 +109,7 @@
                                     <a href="@Url.Action("EditReceiversData", "Receiver", new { id = receiver.ReceiverID })" class="btn btn-primary btn-sm w-100">Edit</a>
                                 </div>
                                 <div class="col-md-12">
-                                    <form method="post" action="@Url.Action("DeleteReceiver", "Receiver", new { id = receiver.ReceiverID })">
+                                    <form method="post" action="@Url.Action("ReceiverDelete", "Receiver", new { id = receiver.ReceiverID })">
                                         <button type="submit" class="btn btn-danger btn-sm w-100">Delete</button>
                                     </form>
                                 </div>
