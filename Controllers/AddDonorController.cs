@@ -40,9 +40,15 @@ namespace Blood_Bank_System.Controllers
             return View(show);
         }
 
+        public IActionResult DonorsView()
+        {
+            var show = c1.AddBloodDonors.ToList();
+            return View(show);
+        }
         public IActionResult EditDonors()
         {
             return View();
         }
+
     }
 }
