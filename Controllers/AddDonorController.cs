@@ -18,7 +18,6 @@ namespace Blood_Bank_System.Controllers
             return View();
         }
 
-        // POST action to handle form submission
         [HttpPost]
         public IActionResult AddDonors(AddDonorModel adddonor)
         {
@@ -28,10 +27,10 @@ namespace Blood_Bank_System.Controllers
                 c1.SaveChanges();
 
                 TempData["SuccessMessage"] = "Donor added successfully!";
-                return RedirectToAction("AddDonors"); // Redirect to a different action, e.g., Index
+                return RedirectToAction("AddDonors");
             }
 
-            return View(adddonor); // Return the same view if validation fails
+            return View(adddonor);
         }
 
         public IActionResult ShowDonors()
@@ -53,29 +52,29 @@ namespace Blood_Bank_System.Controllers
         [HttpGet]
         public IActionResult EditDonors(int id)
         {
-            var donator = c1.AddBloodDonors.Find(id); // Fetch receiver by id
+            var donator = c1.AddBloodDonors.Find(id);
             if (donator == null)
             {
-                return NotFound(); // Handle case where receiver is not found
+                return NotFound();
             }
 
-            return View(donator); // Pass the receiver to the view
+            return View(donator);
         }
 
-        // POST: EditReceiversData
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult EditReceiversData(AddDonorModel donator)
         {
             if (ModelState.IsValid)
             {
-                c1.AddBloodDonors.Update(donator); // Update the receiver in the database
-                c1.SaveChanges(); // Save changes to the database
+                c1.AddBloodDonors.Update(donator);
+                c1.SaveChanges();
 
-                return RedirectToAction("DonorsView"); // Redirect to another page after update
+                return RedirectToAction("DonorsView");
             }
 
-            return View(donator); // Return the same view with validation errors if any
+            return View(donator);
         }
 
         public IActionResult DonorDelete(int Id)
