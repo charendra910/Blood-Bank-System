@@ -38,6 +38,7 @@ namespace Blood_Bank_System.Models
         [StringLength(50, ErrorMessage = "State cannot be longer than 50 characters")]
         public string State { get; set; }
 
+        [Required(ErrorMessage = "Last Date is required")]
         [DataType(DataType.Date)]
         [Display(Name = "Last Donation Date")]
         [CustomValidation(typeof(AddDonorModel), nameof(ValidateDonationDate))]

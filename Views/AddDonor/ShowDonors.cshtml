@@ -1,0 +1,60 @@
+﻿@model IEnumerable<AddDonorModel>
+
+@{
+    ViewData["Title"] = "ShowDonors";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<style>
+    *{
+        background:white;
+    }
+
+    .space {
+        font-size: 42px;
+        line-height: 42px;
+        margin-bottom: 20px;
+        font-weight: 700;
+        color: #555555;
+        letter-spacing: 0.20rem;
+    }
+</style>
+
+<div class="container">
+    <h2 class="mb-4 space text-center">ALL DONORS</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>DonorId</th>
+                <th>FullName</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>BloodType</th>
+                <th>ContactNumber</th>
+                <th>Email Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>LastDonationDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var donor in Model)
+            {
+                <tr>
+                    <td>@donor.DonorId</td>
+                    <td>@donor.FullName</td>
+                    <td>@donor.Age</td>
+                    <td>@donor.Gender</td>
+                    <td>@donor.BloodType</td>
+                    <td>@donor.ContactNumber</td>
+                    <td>@donor.Email</td>
+                    <td>@donor.City</td>
+                    <td>@donor.State</td>
+                    <td>@donor.LastDonationDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

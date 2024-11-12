@@ -13,9 +13,6 @@ namespace Blood_Bank_System.Controllers
             this.c1 = c1;
         }
 
-
-        // GET action to display the form
-        [HttpGet]
         public IActionResult AddDonors()
         {
             return View();
@@ -31,12 +28,21 @@ namespace Blood_Bank_System.Controllers
                 c1.SaveChanges();
 
                 TempData["SuccessMessage"] = "Donor added successfully!";
-                return RedirectToAction("Index"); // Redirect to a different action, e.g., Index
+                return RedirectToAction("AddDonors"); // Redirect to a different action, e.g., Index
             }
 
             return View(adddonor); // Return the same view if validation fails
         }
 
+        public IActionResult ShowDonors()
+        {
+            var show = c1.AddBloodDonors.ToList();
+            return View(show);
+        }
 
+        public IActionResult EditDonors()
+        {
+            return View();
+        }
     }
 }
