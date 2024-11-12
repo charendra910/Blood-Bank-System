@@ -50,5 +50,32 @@ namespace Blood_Bank_System.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult EditDonors(int id)
+        {
+            var donator = c1.AddBloodDonors.Find(id); // Fetch receiver by id
+            if (donator == null)
+            {
+                return NotFound(); // Handle case where receiver is not found
+            }
+
+            return View(donator); // Pass the receiver to the view
+        }
+
+        // POST: EditReceiversData
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditReceiversData(AddDonorModel donator)
+        {
+            if (ModelState.IsValid)
+            {
+                c1.AddBloodDonors.Update(donator); // Update the receiver in the database
+                c1.SaveChanges(); // Save changes to the database
+
+                return RedirectToAction("DonorsView"); // Redirect to another page after update
+            }
+
+            return View(donator); // Return the same view with validation errors if any
+        }
     }
 }

@@ -1,8 +1,113 @@
-﻿
+﻿@model Blood_Bank_System.Models.AddDonorModel
+
 @{
     ViewData["Title"] = "EditDonors";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>EditDonors</h1>
+<div style="margin-top:10px;">
+    <center>
+        <h1><b>UPDATE BLOOD DONORS DETAILS</b></h1>
+    </center>
+</div>
 
+<br />
+
+<form method="post" asp-action="EditReceiversData" class="row g-8">
+    <div class="col-md-6">
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="DonorId">Donor ID</label>
+                <input asp-for="DonorId" class="form-control" readonly />
+                <span asp-validation-for="DonorId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="FullName">Full Name</label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Age">Age</label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Gender">Gender</label>
+                <input asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="BloodType">Blood Type</label>
+                <input asp-for="BloodType" class="form-control" />
+                <span asp-validation-for="BloodType" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="ContactNumber">Contact Number</label>
+                <input asp-for="ContactNumber" class="form-control" />
+                <span asp-validation-for="ContactNumber" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Email">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="City">City</label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="State">State</label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="LastDonationDate">Last Donation Date</label>
+                <textarea asp-for="LastDonationDate" class="form-control"></textarea>
+                <span asp-validation-for="LastDonationDate" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 d-flex justify-content-center mt-4">
+        <br />
+        <button class="btn btn-primary spc" style="width:630px;" type="submit">UPDATE DONORS DETAILS</button>
+    </div>
+</form>
+
+<style>
+    body {
+        background-color: white; /* Choose your desired background color */
+    }
+    .spc{
+        letter-spacing:0.20rem;
+    }
+</style>
