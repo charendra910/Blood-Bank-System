@@ -16,6 +16,7 @@ namespace Blood_Bank_System.Controllers
             this.signInManager = signInManager;
             this.userManager = userManager;
         }
+
         public IActionResult Dashboard()
         {
             return View();
@@ -31,17 +32,24 @@ namespace Blood_Bank_System.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Find user by email to get their full name
+                // Check if the "Remember Me" box is checked
+                if (!model.RememberMe)
+                {
+                    ModelState.AddModelError("", "Please check 'Remember Me' to proceed.");
+                    return View(model);
+                }
+
+                // Find the user by email
                 var user = await userManager.FindByEmailAsync(model.Email);
 
                 if (user != null)
                 {
-                    // Attempt sign-in
-                    var result = await signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
+                    // Attempt to sign in with the provided credentials
+                    var result = await signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, lockoutOnFailure: false);
 
                     if (result.Succeeded)
                     {
-                        // Add FullName claim if it doesn't exist
+                        // Add a "FullName" claim if it doesn't exist
                         var claims = await userManager.GetClaimsAsync(user);
                         if (!claims.Any(c => c.Type == "FullName"))
                         {
@@ -51,13 +59,19 @@ namespace Blood_Bank_System.Controllers
 
                         return RedirectToAction("Dashboard", "Admin");
                     }
+                    else
+                    {
+                        // If password is incorrect
+                        ModelState.AddModelError("", "Email or password is incorrect.");
+                    }
                 }
-
-                ModelState.AddModelError("", "Email or password is incorrect.");
+                else
+                {
+                    ModelState.AddModelError("", "User not found.");
+                }
             }
             return View(model);
         }
-
 
         public IActionResult Register()
         {
@@ -145,7 +159,6 @@ namespace Blood_Bank_System.Controllers
                     }
                     else
                     {
-
                         foreach (var error in result.Errors)
                         {
                             ModelState.AddModelError("", error.Description);
@@ -172,6 +185,5 @@ namespace Blood_Bank_System.Controllers
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-
     }
 }
