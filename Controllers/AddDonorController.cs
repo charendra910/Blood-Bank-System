@@ -1,6 +1,7 @@
 ﻿using Blood_Bank_System.Data;
 using Blood_Bank_System.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Blood_Bank_System.Controllers
 {
@@ -33,17 +34,38 @@ namespace Blood_Bank_System.Controllers
             return View(adddonor);
         }
 
-        public IActionResult ShowDonors()
+        //public IActionResult ShowDonors()
+        //{
+        //    var show = c1.AddBloodDonors.ToList();
+        //    return View(show);
+        //}
+        public async Task<IActionResult> ShowDonors(string searchString)
         {
-            var show = c1.AddBloodDonors.ToList();
-            return View(show);
-        }
+            var users = await c1.AddBloodDonors.ToListAsync();
+            bool dataFound = true; // Flag to indicate if data was found
 
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                searchString = searchString.ToLower(); // Convert search string to lowercase
+
+                users = users.Where(s => s.FullName.ToLower().Contains(searchString) || s.FullName.ToLower().Contains(searchString)).ToList();
+
+                if (users.Count == 0)
+                {
+                    dataFound = false; // Set flag to false if no data is found
+                }
+            }
+
+            ViewBag.DataFound = dataFound; // Pass the flag to the view
+            return View(users);
+
+        }
         public IActionResult DonorsView()
         {
             var show = c1.AddBloodDonors.ToList();
             return View(show);
         }
+
         public IActionResult EditDonors()
         {
             return View();
@@ -90,5 +112,8 @@ namespace Blood_Bank_System.Controllers
             }
             return RedirectToAction("DonorsView"); // Replace "Index" with the appropriate action name or URL
         }
+
+
+
     }
 }
