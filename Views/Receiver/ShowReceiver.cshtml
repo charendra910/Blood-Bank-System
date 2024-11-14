@@ -23,9 +23,30 @@
 
 </style>
 
+@if(!ViewBag.DataFound)
+{
+    <script>Alert('Receiver not found!');</script>
+}
 
 <div class="container">
     <h2 class="mb-4 space text-center">ALL RECEIVERS</h2>
+
+    <div class="row custom-padding r1">
+        <div class="col-md-6 ">
+            <form class="d-flex justify-centent-center" asp-action="ShowReceiver" asp-controller="Receiver">
+                <input name="searchString" class="form-control control-sm me-1" type="search" placeholder="Search" arial-label="Search" />
+                <button class="btn btn-dark" type="submit">Search by name</button>
+            </form>
+        </div>
+
+        <div class="col-md-6 mt-3">
+            <a asp-action="ShowReceiver" class="text-success">Back to Data</a>
+        </div>
+    </div>
+
+    <br />
+    <br />
+
     <table class="table table-bordered">
         <thead>
             <tr>
