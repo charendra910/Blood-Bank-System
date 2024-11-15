@@ -21,11 +21,15 @@
         letter-spacing: 0.20rem;
     }
 
+    .r1 {
+        margin-left: 400px;
+    }
+
 </style>
 
 @if(!ViewBag.DataFound)
 {
-    <script>Alert('Receiver not found!');</script>
+    <script>alert('Receiver not found!');</script>
 }
 
 <div class="container">
@@ -35,7 +39,7 @@
         <div class="col-md-6 ">
             <form class="d-flex justify-centent-center" asp-action="ShowReceiver" asp-controller="Receiver">
                 <input name="searchString" class="form-control control-sm me-1" type="search" placeholder="Search" arial-label="Search" />
-                <button class="btn btn-dark" type="submit">Search by name</button>
+                <button class="btn btn-dark" type="submit">Search the Receiver</button>
             </form>
         </div>
 

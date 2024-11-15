@@ -1,6 +1,7 @@
 ﻿using Blood_Bank_System.Data;
 using Blood_Bank_System.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Blood_Bank_System.Controllers
 {
@@ -32,12 +33,25 @@ namespace Blood_Bank_System.Controllers
             return View(take);
         }
 
-        public IActionResult ShowReceiver()
+        public async Task<IActionResult> ShowReceiver(string searchString)
         {
-            var receivers = r2.BloodReceivers.ToList();
-            return View(receivers);
-        }
+            var users = await r2.BloodReceivers.ToListAsync();
+            bool dataFound = true; // Flag to indicate if data was found
 
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                searchString = searchString.ToLower(); // Convert search string to lowercase
+                users = users.Where(s => s.ReceiverID.ToString().ToLower().Contains(searchString) || s.FullName.ToLower().Contains(searchString)).ToList();
+
+                if (users.Count == 0)
+                {
+                    dataFound = false; // Set flag to false if no data is found
+                }
+            }
+
+            ViewBag.DataFound = dataFound; // Pass the flag to the view
+            return View(users);
+        }
 
         public IActionResult EditReceiversData()
         {
