@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BloodStockModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<!-- Form to select blood type and update quantity -->
+<form asp-action="UpdateQuantity" method="post">
+    <!-- Dropdown to select blood type -->
+    <div class="form-group mt-4">
+        <label for="BloodType">Select Blood Type</label>
+        <select id="BloodType" name="id" class="form-control">
+            @foreach (var stock in Model)
+            {
+                <option value="@stock.Id">@stock.BloodType</option>
+            }
+        </select>
+    </div>
+
+    <!-- Quantity change input field -->
+    <div class="form-group mt-5">
+        <label for="QuantityChange">Enter Quantity Change</label>
+        <input type="number" id="QuantityChange" name="quantityChange" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Update Quantity</button>
+</form>
+
+<!-- Table to display current blood stock -->
+<table class="table table-striped mt-4">
+    <thead>
+        <tr>
+            <th>Blood Type</th>
+            <th>Quantity Available</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stock in Model)
+        {
+            <tr>
+                <td>@stock.BloodType</td>
+                <td>@stock.QuantityAvailable</td>
+            </tr>
+        }
+    </tbody>
+</table>

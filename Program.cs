@@ -44,7 +44,9 @@ builder.Services.AddDbContext<AddDonorContext>
 builder.Services.AddDbContext<ReceiveBloodContext>
     (s1 => s1.UseSqlServer(builder.Configuration.GetConnectionString("con")));
 
-
+// Register the ApplicationDbContext with the SQL Server connection string
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("con")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
