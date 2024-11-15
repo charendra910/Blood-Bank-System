@@ -10,8 +10,6 @@ namespace Blood_Bank_System.Data
 
         }
 
-        
-
         public DbSet<IndexModel> AppointmentRegister { get; set; }
 
     }

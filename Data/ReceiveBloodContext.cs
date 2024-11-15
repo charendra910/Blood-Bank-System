@@ -9,7 +9,6 @@ namespace Blood_Bank_System.Data
         {
 
         }
-
         public DbSet<ReceiveBloodModel> BloodReceivers { get; set; }
     }
 }

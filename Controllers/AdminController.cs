@@ -32,36 +32,31 @@ namespace Blood_Bank_System.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Check if the "Remember Me" box is checked
                 if (!model.RememberMe)
                 {
                     ModelState.AddModelError("", "Please check 'Remember Me' to proceed.");
                     return View(model);
                 }
 
-                // Find the user by email
                 var user = await userManager.FindByEmailAsync(model.Email);
 
                 if (user != null)
                 {
-                    // Attempt to sign in with the provided credentials
                     var result = await signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, lockoutOnFailure: false);
 
                     if (result.Succeeded)
                     {
-                        // Add a "FullName" claim if it doesn't exist
                         var claims = await userManager.GetClaimsAsync(user);
                         if (!claims.Any(c => c.Type == "FullName"))
                         {
                             await userManager.AddClaimAsync(user, new Claim("FullName", user.FullName ?? string.Empty));
-                            await signInManager.RefreshSignInAsync(user);  // Refresh sign-in to apply new claims
+                            await signInManager.RefreshSignInAsync(user);
                         }
 
                         return RedirectToAction("Dashboard", "Admin");
                     }
                     else
                     {
-                        // If password is incorrect
                         ModelState.AddModelError("", "Email or password is incorrect.");
                     }
                 }

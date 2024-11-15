@@ -33,7 +33,6 @@ namespace Blood_Bank_System.Controllers
                 c1.SaveChanges();
                 return RedirectToAction("AddContactUs");
             }
-            // If ModelState is not valid, return the view with validation errors
             return View(contact);
 
         }

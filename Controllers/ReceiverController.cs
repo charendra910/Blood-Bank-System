@@ -36,20 +36,20 @@ namespace Blood_Bank_System.Controllers
         public async Task<IActionResult> ShowReceiver(string searchString)
         {
             var users = await r2.BloodReceivers.ToListAsync();
-            bool dataFound = true; // Flag to indicate if data was found
+            bool dataFound = true;
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                searchString = searchString.ToLower(); // Convert search string to lowercase
+                searchString = searchString.ToLower();
                 users = users.Where(s => s.ReceiverID.ToString().ToLower().Contains(searchString) || s.FullName.ToLower().Contains(searchString)).ToList();
 
                 if (users.Count == 0)
                 {
-                    dataFound = false; // Set flag to false if no data is found
+                    dataFound = false;
                 }
             }
 
-            ViewBag.DataFound = dataFound; // Pass the flag to the view
+            ViewBag.DataFound = dataFound;
             return View(users);
         }
 
@@ -78,7 +78,6 @@ namespace Blood_Bank_System.Controllers
             return View(receiver);
         }
 
-        // POST: EditReceiversData
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult EditReceiversData(ReceiveBloodModel receiver)

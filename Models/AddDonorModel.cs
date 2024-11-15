@@ -44,7 +44,6 @@ namespace Blood_Bank_System.Models
         [CustomValidation(typeof(AddDonorModel), nameof(ValidateDonationDate))]
         public DateTime? LastDonationDate { get; set; }
 
-        // Custom validation method for Last Donation Date
         public static ValidationResult ValidateDonationDate(DateTime? lastDonationDate, ValidationContext context)
         {
             if (lastDonationDate.HasValue && lastDonationDate.Value > DateTime.Today)

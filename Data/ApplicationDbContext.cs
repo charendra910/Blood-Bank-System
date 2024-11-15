@@ -9,5 +9,5 @@ public class ApplicationDbContext : DbContext
 
     }
 
-    public DbSet<BloodStockModel> BloodStocks { get; set; } // BloodStock table in the database
+    public DbSet<BloodStockModel> BloodStocks { get; set; }
 }
