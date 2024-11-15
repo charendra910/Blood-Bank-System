@@ -5,41 +5,56 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>@ViewData["Title"]</h2>
+<center>
+    <h2 class="text-uppercase mt-3 mb-0">Blood Stock Details</h2>
+</center>
 
-<form asp-action="UpdateQuantity" method="post">
-    <div class="form-group mt-4">
-        <label for="BloodType">Select Blood Type</label>
-        <select id="BloodType" name="id" class="form-control">
-            @foreach (var stock in Model)
-            {
-                <option value="@stock.Id">@stock.BloodType</option>
-            }
-        </select>
+<style>
+    table {
+        width: 100%; /* Ensure the table takes the full width of its parent container */
+    }
+
+</style>
+<div class="row justify-content-center">
+    <div class="col-md-9">
+        <!-- Limit the width of the form -->
+        <form asp-action="UpdateQuantity" method="post">
+            <div class="form-group mt-4">
+                <label for="BloodType">Select Blood Type</label>
+                <select id="BloodType" name="id" class="form-control">
+                    @foreach (var stock in Model)
+                    {
+                        <option value="@stock.Id">@stock.BloodType</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group mt-5">
+                <label for="QuantityChange">Enter Quantity Change</label>
+                <input type="number" id="QuantityChange" name="quantityChange" class="form-control" required />
+            </div>
+
+            <div class="d-flex justify-content-center mt-3">
+                <button type="submit" class="btn btn-primary mt-3">Update Quantity</button>
+            </div>
+        </form>
+
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Blood Type</th>
+                    <th>Quantity Available</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var stock in Model)
+                {
+                    <tr>
+                        <td>@stock.BloodType</td>
+                        <td>@stock.QuantityAvailable</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
-
-    <div class="form-group mt-5">
-        <label for="QuantityChange">Enter Quantity Change</label>
-        <input type="number" id="QuantityChange" name="quantityChange" class="form-control" required />
-    </div>
-
-    <button type="submit" class="btn btn-primary mt-3">Update Quantity</button>
-</form>
-
-<table class="table table-striped mt-4">
-    <thead>
-        <tr>
-            <th>Blood Type</th>
-            <th>Quantity Available</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var stock in Model)
-        {
-            <tr>
-                <td>@stock.BloodType</td>
-                <td>@stock.QuantityAvailable</td>
-            </tr>
-        }
-    </tbody>
-</table>
+</div>
