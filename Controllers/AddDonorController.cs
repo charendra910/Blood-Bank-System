@@ -107,7 +107,7 @@ namespace Blood_Bank_System.Controllers
                 TempData["SuccessMessage1"] = "Donor deleted successfully!";
 
             }
-            return RedirectToAction("DonorsView"); // Replace "Index" with the appropriate action name or URL
+            return RedirectToAction("DonorsView");
         }
 
         [HttpGet]
