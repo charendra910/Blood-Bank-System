@@ -5,6 +5,7 @@ namespace Blood_Bank_System.Data
 {
     public class ContactContext : DbContext
     {
+    
         public ContactContext(DbContextOptions<ContactContext> s) : base(s)
         {
 
