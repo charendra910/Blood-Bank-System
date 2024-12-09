@@ -6,9 +6,20 @@
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
 }
 
+<style>
+
+    .sh1 {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .sh1:hover {
+        transform: scale(1.05);
+    }
+
+</style>
 
 <i class="fa-regular fa-user"></i>
-<div class="account-container d-flex justify-content-center mt-5">
+<div class="account-container d-flex justify-content-center sh1 mt-5">
     <div class="account-box glass-form ">
 
         <div class="text-center mb-4 d-flex justify-content-center align-items-center background-color:transparent;">

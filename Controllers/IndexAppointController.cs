@@ -18,8 +18,34 @@ namespace Blood_Bank_System.Controllers
             return View();
         }
 
+        private static Dictionary<int, string> Conditions = new Dictionary<int, string>();
+
+        public IActionResult ViewAppointments()
+        {
+            var show = c2.AppointmentRegister.ToList();
+            ViewBag.Conditions = Conditions; // Pass the conditions to the view
+            return View(show);
+        }
+
+        [HttpPost]
+        public IActionResult SetCondition(int id, string condition)
+        {
+            if (Conditions.ContainsKey(id))
+            {
+                Conditions[id] = condition; // Update condition
+            }
+            else
+            {
+                Conditions.Add(id, condition); // Add new condition
+            }
+
+            return RedirectToAction("ViewAppointments");
+        }
+
         public IActionResult AddAppoint()
         {
+            ViewBag.LoaderDuration = 1700; // 3 seconds
+
             return View();
         }
 

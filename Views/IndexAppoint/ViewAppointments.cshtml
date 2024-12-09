@@ -1,0 +1,128 @@
+﻿@model IEnumerable<IndexModel>
+
+@{
+    ViewData["Title"] = "ViewAppointments";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .box {
+            width: calc(33.33% - 10px);
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .box-two {
+            width: calc(50% - 10px);
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .bd-color {
+            background-color: antiquewhite;
+        }
+
+        .approve-btn {
+            padding-left: 50px;
+            padding-right: 40px;
+
+        }
+
+        .reject-btn {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        .space {
+            font-size: 42px;
+            line-height: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #555555;
+            letter-spacing: 0.30rem;
+        }
+
+    </style>
+
+
+
+    <div class="container mt-2">
+        <div class="row justify-content-center">
+            <div class="col-6 mb-4">
+                <h2 class="text-center space">APPOINTMENTS</h2>
+            </div>
+        </div>
+    </div>
+
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Email Address</th>
+            <th>Contact Number</th>
+            <th>Condition</th> 
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var donor in Model)
+        {
+            <tr>
+                <td>@donor.Id</td>
+                <td>@donor.Name</td>
+                <td>@donor.Email</td>
+                <td>@donor.PhoneNumber</td>
+                <td>
+                    @if (ViewBag.Conditions.ContainsKey(donor.Id))
+                    {
+                        var condition = ViewBag.Conditions[donor.Id];
+                        if (condition == "Approved")
+                        {
+                            <span class="text-success">@condition <i class="fas fa-check-circle"></i></span>
+                        }
+                        else if (condition == "Rejected")
+                        {
+                            <span class="text-danger">@condition <i class="fas fa-times-circle"></i></span>
+                        }
+                    }
+                    else
+                    {
+                        <span class="text-secondary">Pending</span>
+                    }
+                </td>
+                <td role="group">
+                    <div class="mb-1">
+                        <div class="col-md-12 mb-2">
+                            <form method="post" action="@Url.Action("SetCondition", "IndexAppoint", new { id = donor.Id, condition = "Approved" })">
+                                <button type="submit" class="btn btn-success btn-sm w-100">Approved</button>
+                            </form>
+                        </div>
+                        <div class="col-md-12">
+                            <form method="post" action="@Url.Action("SetCondition", "IndexAppoint", new { id = donor.Id, condition = "Rejected" })">
+                                <button type="submit" class="btn btn-danger btn-sm w-100">Rejected</button>
+                            </form>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+        
+    </tbody>
+
+</table>
+
+

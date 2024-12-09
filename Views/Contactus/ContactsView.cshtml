@@ -1,0 +1,89 @@
+﻿@model IEnumerable<ContactModel>
+@{
+    ViewData["Title"] = "ContactsView";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .space {
+        font-size: 42px;
+        line-height: 42px;
+        margin-bottom: 20px;
+        font-weight: 700;
+        color: #333;
+        letter-spacing: 0.40rem;
+        text-transform: uppercase;
+    }
+
+    .container {
+        margin-top: 30px;
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .img-container {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+        .img-container img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+    .table {
+        margin-top: 20px;
+        background: #fff;
+    }
+
+        .table thead th {
+            background: #343a40;
+            color: #fff;
+            text-align: center;
+        }
+
+        .table tbody td {
+            text-align: center;
+            vertical-align: middle;
+        }
+</style>
+
+<div class="container">
+    <h2 class="mb-4 space text-center">Contact Details</h2>
+
+    <div class="img-container">
+        <img src="~/images/contact.png" alt="Contact Illustration" />
+    </div>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Donor ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var donor in Model)
+            {
+                <tr>
+                    <td>@donor.Id</td>
+                    <td>@donor.Name</td>
+                    <td>@donor.Email</td>
+                    <td>@donor.Address</td>
+                    <td>@donor.Message</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

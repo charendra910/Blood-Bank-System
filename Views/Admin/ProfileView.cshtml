@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Blood_Bank_System.Models.UsersModel>
+
+@{
+    ViewData["Title"] = "ProfileView";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+ <h1>All Users</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.FullName</td>
+                <td>@user.Email</td>
+                <td>@user.PhoneNumber</td>
+                <td>@user.</td>
+            </tr>
+        }
+    </tbody>
+</table> 

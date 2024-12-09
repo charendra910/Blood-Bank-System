@@ -36,5 +36,11 @@ namespace Blood_Bank_System.Controllers
             return View(contact);
 
         }
+
+        public IActionResult ContactsView()
+        {
+            var show = c1.Contactregister.ToList();
+            return View(show);
+        }
     }
 }

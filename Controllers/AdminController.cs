@@ -1,5 +1,6 @@
 ﻿using Blood_Bank_System.Models;
 using Blood_Bank_System.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -17,8 +18,10 @@ namespace Blood_Bank_System.Controllers
             this.userManager = userManager;
         }
 
+        [Authorize]
         public IActionResult Dashboard()
         {
+            ViewBag.LoaderDuration = 2000; // 3 seconds
             return View();
         }
 
@@ -180,5 +183,19 @@ namespace Blood_Bank_System.Controllers
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+
+        public async Task<IActionResult> Profile()
+        {
+            var users = userManager.Users.ToList(); // Fetch all users
+            return View(users);
+        }
+
+        public async Task<IActionResult> ProfileView()
+        {
+            var users = userManager.Users.ToList(); // Fetch all users
+            return View(users);
+        }
     }
 }
+
+

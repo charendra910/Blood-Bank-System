@@ -37,6 +37,10 @@ builder.Services.AddIdentity<UsersModel, IdentityRole>(options =>
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
+
+
+
+
 //registering dbcontext for the blood donors
 builder.Services.AddDbContext<AddDonorContext>
     (add => add.UseSqlServer(builder.Configuration.GetConnectionString("con")));
