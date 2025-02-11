@@ -10,7 +10,6 @@ namespace Blood_Bank_System.Data
 
         }
 
-
         public DbSet<AddDonorModel> AddBloodDonors { get; set; }
 
     }
