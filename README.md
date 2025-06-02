@@ -32,6 +32,7 @@ The **Blood Bank Management System** is a web application developed using **ASP.
 - 📈 **Analytics Dashboard**: Add analytics for donor and blood stock trends.
 - 📧 **Notifications**: Send email alerts for low blood stock.
 
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
